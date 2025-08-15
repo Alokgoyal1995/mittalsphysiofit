@@ -1,483 +1,1906 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - Mittal's Physiofit</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Social Media and Call Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mittal's Physiofit
+    </title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <style>
-        * {
-            box-sizing: border-box;
+        body {
             font-family: 'Poppins', sans-serif;
         }
 
-        body {
-            min-height: 100vh;
-            background: #1a3c34; /* Fallback color */
-            overflow: auto; /* Enable scrolling */
-            margin: 0; /* Remove default margin */
+        .navbar-brand img {
+            /* height: 40px; */
+            width: 125px;
         }
 
-        .background {
-            position: fixed;
+        .hero-section {
+            position: relative;
+            height: 480px;
+            color: white;
+        }
+
+        .fs-15 {
+            font-size: 15px;
+        }
+
+        .hero-section .carousel-item {
+            height: 480px;
+        }
+
+        .hero-section .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
-        .background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.5) blur(2px); /* Dim and blur for text contrast */
-        }
-
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            max-width: 150px; /* Larger for desktop */
-            height: auto;
-            z-index: 2;
-            animation: logoPulse 2s infinite ease-in-out;
-        }
-
-        @keyframes logoPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .container {
-            text-align: center;
-            color: white;
-            padding: 30px;
-            margin-top: 50px; /* Adjusted margin-top for spacing */
-            animation: fadeIn 1.5s ease-in-out;
-            width: 100%;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-            background: linear-gradient(45deg, #F5F6F5, #FFD700); /* Soft white to golden gradient */
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .tagline {
-            font-size: 1.6rem;
-            font-weight: 300;
-            margin-bottom: 20px;
-            opacity: 0.9;
-            color: #B0E0E6;
-        }
-
-        h5 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-bottom: 30px;
-            color: #fff;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: nowrap; /* Single row on all screens */
-        }
-
-        .countdown div {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 20px;
-            border-radius: 12px;
-            min-width: 90px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        .hero-content {
             position: relative;
-            overflow: hidden;
+            z-index: 2;
+            width: 100%;
+            max-width: 650px;
         }
 
-        .countdown span {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #B0E0E6;
-            animation: flip 1s ease-in-out;
+        .bg-teal-100 {
+            background-color: #E6FFFA;
         }
 
-        @keyframes flip {
-            0% { transform: rotateX(90deg); }
-            100% { transform: rotateX(0deg); }
+        .text-teal-500 {
+            color: #38B2AC;
         }
 
-        .countdown label {
-            font-size: 1rem;
-            text-transform: uppercase;
-            opacity: 0.8;
-            color: #fff;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .whatsapp-button, .call-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 15px 40px;
+        .btn-teal {
+            background-color: #38B2AC;
             color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.3rem;
-            font-weight: 500;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
         }
 
-        .whatsapp-button {
-            background: #25D366;
+        .btn-teal:hover {
+            background-color: #319795;
+            color: white;
         }
 
-        .whatsapp-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-            background: #20b358;
+        .btn-outline-light {
+            border-color: white;
+            color: white;
         }
 
-        .call-button {
-            background: #007bff;
+        .btn-outline-light:hover {
+            background-color: white;
+            color: #38B2AC;
         }
 
-        .call-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
-            background: #0056b3;
+        .hr-teal {
+            width: 64px;
+            height: 4px;
+            background-color: #38B2AC;
+            margin: 0 auto;
         }
 
-        .whatsapp-button img, .call-button i {
-            width: 28px;
-            height: 28px;
-            margin-right: 12px;
+        .card-img-top-speciality {
+            height: 160px;
+            object-fit: cover;
         }
 
-        .call-button i {
-            transform: rotate(0deg); /* Ensure correct orientation */
+        .expert-img {
+            width: 128px;
+            height: 128px;
+            object-fit: cover;
         }
 
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            z-index: 1; /* Ensure visibility above background */
+        .border-teal-400 {
+            border-color: #4FD1C5 !important;
         }
 
-        .social-media a {
-            color: #fff;
-            font-size: 2rem;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            text-decoration: none;
-            transition: transform 0.3s, background 0.3s;
+        .bg-dark-custom {
+            background-color: #2D3748;
         }
 
-        .social-media a:hover {
-            transform: scale(1.2);
-            background: rgba(255, 255, 255, 0.4);
+        .text-teal-400 {
+            color: #4FD1C5;
         }
 
-        /* Responsive Adjustments */
-        @media (min-width: 992px) {
-            .container {
-                padding: 40px;
-                max-width: 1200px; /* Wider container for desktop */
+        .bg-gray-900 {
+            background-color: #1A202C;
+        }
+
+        .bg-gray-100 {
+            background-color: #F7FAFC;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 3;
+        }
+
+        .treat-color {
+            color: #153C33;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
             }
 
-            h1 {
-                font-size: 4.5rem;
-            }
-
-            .tagline {
-                font-size: 1.8rem;
-            }
-
-            h5 {
-                font-size: 1.5rem;
-            }
-
-            .countdown div {
-                min-width: 100px;
-                padding: 25px;
-            }
-
-            .countdown span {
-                font-size: 2.8rem;
-            }
-
-            .countdown label {
-                font-size: 1.1rem;
+            to {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
-        @media (max-width: 767.98px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            h5 {
-                font-size: 1rem;
-            }
-
-            .countdown {
-                gap: 8px;
-            }
-
-            .countdown div {
-                min-width: 60px;
-                padding: 12px;
-            }
-
-            .countdown span {
-                font-size: 1.6rem;
-            }
-
-            .logo {
-                max-width: 120px;
-                top: 15px;
-                left: 15px;
-            }
-
-            .button-container {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-
-            .whatsapp-button, .call-button {
-                font-size: 1.1rem;
-                padding: 12px 30px;
-                width: 100%;
-                max-width: 250px;
-                justify-content: center;
-            }
-
-            .social-media {
-                gap: 12px;
-                padding-bottom: 20px;
-            }
-
-            .social-media a {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-            }
+        .animate-slide-in-left {
+            animation: slideInLeft 1s ease-out forwards;
         }
 
-        @media (max-width: 576px) {
-            .container {
-                margin-top: 40px; /* Reduced margin-top for mobile */
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 0.9rem;
-            }
-
-            h5 {
-                font-size: 0.85rem;
-            }
-
-            .countdown div {
-                min-width: 50px;
-                padding: 10px;
-            }
-
-            .countdown span {
-                font-size: 1.4rem;
-            }
-
-            .countdown label {
-                font-size: 0.8rem;
-            }
-
-            .logo {
-                max-width: 50px;
-                top: 10px;
-                left: 10px;
-            }
-
-            .whatsapp-button, .call-button {
-                font-size: 13px;
-                padding: 10px 25px;
-            }
-
-            .social-media a {
-                width: 40px;
-                height: 40px;
-                font-size: 1.3rem;
-            }
-            .container{
-                margin-top: 43px;
-            }
+        .testimonial-carousel {
+            animation: slideRightToLeft 20s linear infinite;
         }
 
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 1.8rem;
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(0%);
             }
 
-            .tagline {
-                font-size: 0.8rem;
-            }
-
-            h5 {
-                font-size: 0.75rem;
-            }
-
-            .countdown div {
-                min-width: 45px;
-                padding: 8px;
-            }
-
-            .countdown span {
-                font-size: 1.2rem;
-            }
-
-            .countdown label {
-                font-size: 0.7rem;
-            }
-
-            .logo {
-                max-width: 80px;
-            }
-
-            .social-media a {
-                width: 35px;
-                height: 35px;
-                font-size: 1.1rem;
+            100% {
+                transform: translateX(-100%);
             }
         }
     </style>
 </head>
-<body>
-    <div class="background">
-        <video autoplay muted loop playsinline>
-            <source src="./assets/video/bg.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <img src="./assets/Logo.webp" alt="Physiotherapy Logo" class="logo">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8 text-center">
-                <h1>Mittal's Physiofit</h1>
-                <p class="tagline">A Hub of Rehabilitation & Fitness</p>
-                <h5>Our website is launching soon!🚀</h5>
-                <div class="countdown d-flex justify-content-center flex-nowrap" id="countdown">
-                    <div class="m-1">
-                        <span id="days">00</span>
-                        <label>Days</label>
+
+<body class="bg-light">
+    <header class="bg-white shadow-sm">
+        <div style="background-color: #153C33;">
+            <div class="container py-2">
+                <div class="d-flex justify-content-between align-items-center small text-white">
+                    <div>
+                        <span> <a href="tel:+919610164989" class="text-white"><i
+                                    class="material-icons text-sm align-middle">call</i></a>
+                            +91-9610164989</span>
+                        <!-- <span class="me-2"> <a href="tel:+918970227764" class="text-white"><i
+                                    class="material-icons text-sm align-middle">call</i></a>
+                            +91-8970227764</span> -->
                     </div>
-                    <div class="m-1">
-                        <span id="hours">00</span>
-                        <label>Hours</label>
+                    <div>
+                        <a href="https://classplusapp.com/w/mittalsmedicalclassesjigls" target="_blank"
+                            class="btn btn-danger d-inline-flex align-items-center px-3 py-2 shadow-sm rounded-pill">
+                            <img src="https://www.engineersacademy.org/images/red.gif" alt="Live" class="me-2"
+                                style="width:20px; height:20px; border-radius: 50%;">
+                            Live Classes
+                        </a>
                     </div>
-                    <div class="m-1">
-                        <span id="minutes">00</span>
-                        <label>Minutes</label>
-                    </div>
-                    <div class="m-1">
-                        <span id="seconds">00</span>
-                        <label>Seconds</label>
-                    </div>
-                </div>
-                <div class="button-container d-flex justify-content-center flex-wrap">
-                    <a href="https://wa.me/+918970227764?text=Hello%20I%20am%20interested%20in%20your%20physiotherapy%20services" class="whatsapp-button" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon"> Connect on WhatsApp
-                    </a>
-                    <a href="tel:+918970227764" class="call-button">
-                        <i class="fa-solid fa-phone"></i> <span>Call Us</span>
-                    </a>
-                </div>
-                <div class="social-media d-flex justify-content-center flex-wrap">
-                    <a href="https://www.youtube.com/@MMC-Allmedicalsubjects" target="_blank" title="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mittalsphysiofit/" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com/mittal.sachendra891" target="_blank" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=co.brown.jigls" target="_blank" title="Google Play">
-                        <i class="fa-brands fa-google-play"></i>
-                    </a>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="border-top">
+            <nav class="navbar navbar-expand-lg bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img alt="CB Physiotherapy Logo" src="./assets/image/Logo.webp" />
+                    </a>
+                    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                        <i class="material-icons">menu</i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                            <li class="nav-item" onclick="scrollToSection('Services')"><a class="nav-link"
+                                    href="#">Services</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li> -->
+                            <li class="nav-item dropdown">
+                                <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                    href="" id="navbarDropdown" role="button">
+                                    Download
+                                </a>
+                                <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                                    <li><a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1bRkVtug0i-sa3-pBaxMUQ1kaseH0frIm/view">Back Exercises</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Bootstrap 5 JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <main>
+        <section class="hero-section d-flex align-items-center justify-content-center p-0">
+            <div class="carousel slide" data-bs-ride="carousel" id="heroCarousel"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider1.webp" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider2.webp" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider1.webp" />
+                    </div>
+                </div>
+            </div>
+            <div class="hero-content text-center px-4">
+                <h2 class="display-4 fw-bold mb-4">Precision Care for <br /> Pain-Free Mobility</h2>
+                <p class="mb-4 lead fs-15">We offer advanced physiotherapy treatment by highly skilled physiotherapists
+                    at
+                    our clinics or at your home. We've helped thousands of patients to get back to their active life.
+                </p>
+                <a class="btn btn-outline-light btn-lg fw-semibold py-2 px-3 fs-15"
+                    href="./requestcallback.html">Request Callback</a>
+                <a class="btn btn-teal btn-lg fw-semibold py-2 px-3 me-md-2 mb-3 mb-md-0 fs-15"
+                    href="./bookappoitment.html">Book an
+                    Appointment
+                    Now</a>
+            </div>
+        </section>
+        <section class="py-4" style="background-color: #153C33;">
+            <div class="container">
+                <div class="row text-center gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="bg-white p-2 rounded-circle mb-3"
+                                style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="material-icons text-teal-500" style="font-size: 1.5rem;">people</i>
+                            </div>
+                            <h3 class="fw-semibold fs-6 mb-2 text-white">Advanced Clinics</h3>
+                            <p class="text-white-50 fs-15">Well equipped clinics with modern equipment &amp; certified
+                                Physio
+                                Experts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="bg-white p-2 rounded-circle mb-3"
+                                style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="material-icons text-teal-500" style="font-size: 1.5rem;">local_hospital</i>
+                            </div>
+                            <h3 class="fw-semibold fs-6 mb-2 text-white">Professional Home Care</h3>
+                            <p class="text-white-50 fs-15">Get treated in the comfort of your home by our professional
+                                &amp;
+                                certified Physio Experts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="bg-white p-2 rounded-circle mb-3"
+                                style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="material-icons text-teal-500" style="font-size: 1.5rem;">phone_in_talk</i>
+                            </div>
+                            <h3 class="fw-semibold fs-6 mb-2 text-white">Tele / Remote Rehab</h3>
+                            <p class="text-white-50 fs-15">Connect with our physios over video call from anywhere.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="bg-white p-2 rounded-circle mb-3"
+                                style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="material-icons text-teal-500" style="font-size: 1.5rem;">home_work</i>
+                            </div>
+                            <h3 class="fw-semibold fs-6 mb-2 text-white">Corporate Wellness</h3>
+                            <p class="text-white-50 fs-15">We offer ergonomic assessment and wellness programs for
+                                corporate
+                                employees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="position-relative overflow-hidden rounded-3">
+                            <img alt="Physiotherapist assisting a patient" class="img-fluid rounded-3"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrgW9NzXsbQSv65PNwZvsThPfsBDChfN6nwPQ-qSKatvxET6Km8CCR8DVKVOsONTWnlWy9SIggJ0G3zRZSADIIHOwbWDEAFcx3bBskEy7OTobMQnAVKk4evJk45_YF7zefkLULt8K6X3WerH1iY3KHqiJKtUzsuidgzf2SDzi3YiaVh3JkR3DD2sVW5D6FWRn0KerC7w8XpKOEtX_xPoYlxYzL7tpWvMvqCgGPZxLD3ECLbcjNWAvRwIAZpA_iLhNvTyZPBrfSjio" />
+                            <div
+                                class="position-absolute bottom-0 start-0 bg-white bg-opacity-75 p-4 rounded-end-3 animate-slide-in-left">
+                                <h3 class="display-5 fw-bold text-success">15+</h3>
+                                <p class="fw-medium text-dark">Years of Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-4">
+                        <h3 class="text-success fw-semibold text-uppercase small">About US</h3>
+                        <!-- <h4 class="display-6 fw-bold mt-2">We Are The Best For Physiotherapy</h4> -->
+                        <h6 class="mt-2">Welcome to Mittal’s Physiofit – A Hub of Rehabilitation
+                        </h6>
+
+                        <p class="text-muted mt-3">Established in 2019, Mittal’s Physiofit stands as a trusted center
+                            for holistic healing and physical wellness. Founded by Dr. Leena and Dr. Sachendra Mittal,
+                            the clinic is the realization of their two decades of dedication to the science of
+                            physiotherapy and the art of compassionate care.
+                        </p>
+                        <p class="text-muted mt-3">At Mittal’s Physiofit, we blend medical expertise with a deeply human
+                            touch. Our team of experienced and certified physiotherapists is committed not just to
+                            treating symptoms, but to understanding and addressing the root causes of each condition. We
+                            recognize that every patient is a person first — navigating physical, emotional, social, or
+                            even economic challenges — and not just a medical case.
+                        </p>
+                        <p class="text-muted mt-3">What sets us apart is our patient-centered approach. With skilled
+                            hands and caring hearts, our therapists deliver personalized care that combines scientific
+                            precision with empathetic support. We believe that true rehabilitation goes beyond
+                            techniques and technology — it lies in a genuine connection with those we serve.
+
+                        </p>
+                        <p class="text-muted mt-3">Whether you're recovering from an injury, managing a chronic
+                            condition, or simply working towards better physical health, Mittal’s Physiofit is here to
+                            guide you every step of the way — helping you move better, live stronger,
+                            and heal naturally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="py-5 bg-light overflow-hidden">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <p class="text-success fw-semibold text-uppercase small">Patient Feedback</p>
+                    <h2 class="display-6 fw-bold text-dark mt-2">What Patients Says About us</h2>
+                </div>
+                <div class="position-relative">
+                    <div class="d-flex testimonial-carousel">
+                        <div class="col-4 flex-shrink-0 px-2">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-warning mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="card-title fw-semibold">Great Doctor</h5>
+                                    <p class="card-text text-muted small flex-grow-1">Great doctor and amazing doctors.
+                                        More than a doctor he is a great human being. I would recommend this place for
+                                        all your physio needs. Must visit. Miraculous if you have an unbearable pain
+                                        anywhere. You will be sorted for sure.</p>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <img alt="Shruti Mehra" class="rounded-circle me-3"
+                                            style="width: 40px; height: 40px;"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw537i85_BdrppMoYJzu09HQuTkzkN6Yy92jsxieopUoyt2FCpAdJFqfY04sHuRZz9TtI9L0a04JOBkJC8R8GHANBxR3pfBYTaZw8iZGHxP8eqGT87TyG1QUokV1dJQzVsyNLAkjQRuBLHi8j8ZVBkvEsCoX0i8ZlJsAwRMnEI0j8uNR-n1CrYrP6yUKqOnKD84SVzi3j6FY9C1M73wHBgnDfjRXyYxwg-53wQs3NiPHlUfU96TtSPwwq0vAeLp4Z1OXD9SQ8AN1w" />
+                                        <span class="fw-semibold">Shruti Mehra</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 flex-shrink-0 px-2">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-warning mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="card-title fw-semibold">Super Awesome!</h5>
+                                    <p class="card-text text-muted small flex-grow-1">Experienced a great treatment and
+                                        recovery. The physiotherapist is good in nature and expert in her job. Thanks
+                                        for all your support & guidance. Keep it up team. Must visit if you are in any
+                                        challenges related to physio.</p>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <img alt="Kavita Kanhaiyaan" class="rounded-circle me-3"
+                                            style="width: 40px; height: 40px;"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuKpHakasWsbNtmeDQlawamnQ0dpgvWKvclgLvHKvIlrZvSshaFaEYaWuFdLvgCpx_XVFP-ASUxEROsTeP_a26GSGK3_l5X8GyhAiPvvJTK7NXmWlYFKtg-lwQYHiFg5O0Umtqzih8WuU_pBLKCC_31T1UQZQwwMvxm0VOe3WLswnr7RShRkz793xZPM1DSiOQpuPf_GLGdWlWlcIOilbK8nE37JIqYLHbtVPdkzS_EcdOW1OEGz02EblCAUegN_neqg5dxc-DXFo" />
+                                        <span class="fw-semibold">Kavita Kanhaiyaan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 flex-shrink-0 px-2">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-warning mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="card-title fw-semibold">Highly Satisfied</h5>
+                                    <p class="card-text text-muted small flex-grow-1">Best ever service. I first have
+                                        experience with this type of service at home. Doctor is so gentle and he is
+                                        explaining my problem and it is an unbelievable experience of physiotherapy.
+                                        Quiet and supported team of CB Physiotherapy.</p>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <img alt="Chaitanya Aparna" class="rounded-circle me-3"
+                                            style="width: 40px; height: 40px;"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_o979m9pe16bRMlFTVICKf8UWMThd1eNeu8O01AKouqAAIlG42QbdNWjonZPnktTDqq9TSU6l1iXow8c8QxPfUj8Bz2WA5qwkli4a4S9Pe6ETOVEaSd34BIns2GBIOsBWZLssHNBhIKMK-EawWy83WKjVffVjR0yqfj4qAvYLUYjqWzfM4WGwJjdEpII6P4Gppn3solfzs9jLx65egpzGZfN-LZMHbYErXwCcSpCc1HCaxQmXmXmBPCfwgsGJouz54xEOPP_GNLUY" />
+                                        <span class="fw-semibold">Chaitanya Aparna</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 flex-shrink-0 px-2">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-warning mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="card-title fw-semibold">Great Doctor</h5>
+                                    <p class="card-text text-muted small flex-grow-1">Great doctor and amazing doctors.
+                                        More than a doctor he is a great human being. I would recommend this place for
+                                        all your physio needs. Must visit. Miraculous if you have an unbearable pain
+                                        anywhere. You will be sorted for sure.</p>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <img alt="Shruti Mehra" class="rounded-circle me-3"
+                                            style="width: 40px; height: 40px;"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw537i85_BdrppMoYJzu09HQuTkzkN6Yy92jsxieopUoyt2FCpAdJFqfY04sHuRZz9TtI9L0a04JOBkJC8R8GHANBxR3pfBYTaZw8iZGHxP8eqGT87TyG1QUokV1dJQzVsyNLAkjQRuBLHi8j8ZVBkvEsCoX0i8ZlJsAwRMnEI0j8uNR-n1CrYrP6yUKqOnKD84SVzi3j6FY9C1M73wHBgnDfjRXyYxwg-53wQs3NiPHlUfU96TtSPwwq0vAeLp4Z1OXD9SQ8AN1w" />
+                                        <span class="fw-semibold">Shruti Mehra</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 flex-shrink-0 px-2">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-warning mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="card-title fw-semibold">Super Awesome!</h5>
+                                    <p class="card-text text-muted small flex-grow-1">Experienced a great treatment and
+                                        recovery. The physiotherapist is good in nature and expert in her job. Thanks
+                                        for all your support & guidance. Keep it up team. Must visit if you are in any
+                                        challenges related to physio.</p>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <img alt="Kavita Kanhaiyaan" class="rounded-circle me-3"
+                                            style="width: 40px; height: 40px;"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuKpHakasWsbNtmeDQlawamnQ0dpgvWKvclgLvHKvIlrZvSshaFaEYaWuFdLvgCpx_XVFP-ASUxEROsTeP_a26GSGK3_l5X8GyhAiPvvJTK7NXmWlYFKtg-lwQYHiFg5O0Umtqzih8WuU_pBLKCC_31T1UQZQwwMvxm0VOe3WLswnr7RShRkz793xZPM1DSiOQpuPf_GLGdWlWlcIOilbK8nE37JIqYLHbtVPdkzS_EcdOW1OEGz02EblCAUegN_neqg5dxc-DXFo" />
+                                        <span class="fw-semibold">Kavita Kanhaiyaan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 flex-shrink-0 px-2">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-warning mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="card-title fw-semibold">Highly Satisfied</h5>
+                                    <p class="card-text text-muted small flex-grow-1">Best ever service. I first have
+                                        experience with this type of service at home. Doctor is so gentle and he is
+                                        explaining my problem and it is an unbelievable experience of physiotherapy.
+                                        Quiet and supported team of CB Physiotherapy.</p>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <img alt="Chaitanya Aparna" class="rounded-circle me-3"
+                                            style="width: 40px; height: 40px;"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_o979m9pe16bRMlFTVICKf8UWMThd1eNeu8O01AKouqAAIlG42QbdNWjonZPnktTDqq9TSU6l1iXow8c8QxPfUj8Bz2WA5qwkli4a4S9Pe6ETOVEaSd34BIns2GBIOsBWZLssHNBhIKMK-EawWy83WKjVffVjR0yqfj4qAvYLUYjqWzfM4WGwJjdEpII6P4Gppn3solfzs9jLx65egpzGZfN-LZMHbYErXwCcSpCc1HCaxQmXmBPCfwgsGJouz54xEOPP_GNLUY" />
+                                        <span class="fw-semibold">Chaitanya Aparna</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section> -->
+        <!-- <section class="py-20 bg-gray-50 overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <p class="text-[#00a896] font-semibold text-sm uppercase">Patient Feedback</p>
+                    <h2 class="text-4xl font-bold text-gray-800 mt-2">What Patients Says About us</h2>
+                </div>
+                <div class="relative">
+                    <div class="flex testimonial-carousel">
+                        <div class="w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-8 h-full flex flex-col">
+                                <div class="text-yellow-400 mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h5 class="font-semibold text-base text-gray-800">Great Doctor</h5>
+                                <p class="text-gray-500 text-sm flex-grow mt-2">Great doctor and amazing doctors. More
+                                    than
+                                    a doctor he is a great human being. I would recommend this place for all your physio
+                                    needs. Must visit. Miraculous if you have an unbearable pain anywhere. You will be
+                                    sorted for sure.</p>
+                                <div class="flex items-center mt-6">
+                                    <img alt="Shruti Mehra" class="w-10 h-10 rounded-full mr-4"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw537i85_BdrppMoYJzu09HQuTkzkN6Yy92jsxieopUoyt2FCpAdJFqfY04sHuRZz9TtI9L0a04JOBkJC8R8GHANBxR3pfBYTaZw8iZGHxP8eqGT87TyG1QUokV1dJQzVsyNLAkjQRuBLHi8j8ZVBkvEsCoX0i8ZlJsAwRMnEI0j8uNR-n1CrYrP6yUKqOnKD84SVzi3j6FY9C1M73wHBgnDfjRXyYxwg-53wQs3NiPHlUfU96TtSPwwq0vAeLp4Z1OXD9SQ8AN1w" />
+                                    <span class="font-semibold">Shruti Mehra</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-8 h-full flex flex-col">
+                                <div class="text-yellow-400 mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h5 class="font-semibold text-base text-gray-800">Super Awesome!</h5>
+                                <p class="text-gray-500 text-sm flex-grow mt-2">Experienced a great treatment and
+                                    recovery.
+                                    The physiotherapist is good in nature and expert in her job. Thanks for all your
+                                    support
+                                    &amp; guidance. Keep it up team. Must visit if you are in any challenges related to
+                                    physio.</p>
+                                <div class="flex items-center mt-6">
+                                    <img alt="Kavita Kanhaiyaan" class="w-10 h-10 rounded-full mr-4"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuKpHakasWsbNtmeDQlawamnQ0dpgvWKvclgLvHKvIlrZvSshaFaEYaWuFdLvgCpx_XVFP-ASUxEROsTeP_a26GSGK3_l5X8GyhAiPvvJTK7NXmWlYFKtg-lwQYHiFg5O0Umtqzih8WuU_pBLKCC_31T1UQZQwwMvxm0VOe3WLswnr7RShRkz793xZPM1DSiOQpuPf_GLGdWlWlcIOilbK8nE37JIqYLHbtVPdkzS_EcdOW1OEGz02EblCAUegN_neqg5dxc-DXFo" />
+                                    <span class="font-semibold">Kavita Kanhaiyaan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-8 h-full flex flex-col">
+                                <div class="text-yellow-400 mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h5 class="font-semibold text-base text-gray-800">Highly Satisfied</h5>
+                                <p class="text-gray-500 text-sm flex-grow mt-2">Best ever service. I first have
+                                    experience
+                                    with this type of service at home. Doctor is so gentle and he is explaining my
+                                    problem
+                                    and it is an unbelievable experience of physiotherapy. Quiet and supported team of
+                                    CB
+                                    Physiotherapy.</p>
+                                <div class="flex items-center mt-6">
+                                    <img alt="Chaitanya Aparna" class="w-10 h-10 rounded-full mr-4"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_o979m9pe16bRMlFTVICKf8UWMThd1eNeu8O01AKouqAAIlG42QbdNWjonZPnktTDqq9TSU6l1iXow8c8QxPfUj8Bz2WA5qwkli4a4S9Pe6ETOVEaSd34BIns2GBIOsBWZLssHNBhIKMK-EawWy83WKjVffVjR0yqfj4qAvYLUYjqWzfM4WGwJjdEpII6P4Gppn3solfzs9jLx65egpzGZfN-LZMHbYErXwCcSpCc1HCaxQmXmBPCfwgsGJouz54xEOPP_GNLUY" />
+                                    <span class="font-semibold">Chaitanya Aparna</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-8 h-full flex flex-col">
+                                <div class="text-yellow-400 mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h5 class="font-semibold text-base text-gray-800">Great Doctor</h5>
+                                <p class="text-gray-500 text-sm flex-grow mt-2">Great doctor and amazing doctors. More
+                                    than
+                                    a doctor he is a great human being. I would recommend this place for all your physio
+                                    needs. Must visit. Miraculous if you have an unbearable pain anywhere. You will be
+                                    sorted for sure.</p>
+                                <div class="flex items-center mt-6">
+                                    <img alt="Shruti Mehra" class="w-10 h-10 rounded-full mr-4"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw537i85_BdrppMoYJzu09HQuTkzkN6Yy92jsxieopUoyt2FCpAdJFqfY04sHuRZz9TtI9L0a04JOBkJC8R8GHANBxR3pfBYTaZw8iZGHxP8eqGT87TyG1QUokV1dJQzVsyNLAkjQRuBLHi8j8ZVBkvEsCoX0i8ZlJsAwRMnEI0j8uNR-n1CrYrP6yUKqOnKD84SVzi3j6FY9C1M73wHBgnDfjRXyYxwg-53wQs3NiPHlUfU96TtSPwwq0vAeLp4Z1OXD9SQ8AN1w" />
+                                    <span class="font-semibold">Shruti Mehra</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-8 h-full flex flex-col">
+                                <div class="text-yellow-400 mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h5 class="font-semibold text-base text-gray-800">Super Awesome!</h5>
+                                <p class="text-gray-500 text-sm flex-grow mt-2">Experienced a great treatment and
+                                    recovery.
+                                    The physiotherapist is good in nature and expert in her job. Thanks for all your
+                                    support
+                                    &amp; guidance. Keep it up team. Must visit if you are in any challenges related to
+                                    physio.</p>
+                                <div class="flex items-center mt-6">
+                                    <img alt="Kavita Kanhaiyaan" class="w-10 h-10 rounded-full mr-4"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuKpHakasWsbNtmeDQlawamnQ0dpgvWKvclgLvHKvIlrZvSshaFaEYaWuFdLvgCpx_XVFP-ASUxEROsTeP_a26GSGK3_l5X8GyhAiPvvJTK7NXmWlYFKtg-lwQYHiFg5O0Umtqzih8WuU_pBLKCC_31T1UQZQwwMvxm0VOe3WLswnr7RShRkz793xZPM1DSiOQpuPf_GLGdWlWlcIOilbK8nE37JIqYLHbtVPdkzS_EcdOW1OEGz02EblCAUegN_neqg5dxc-DXFo" />
+                                    <span class="font-semibold">Kavita Kanhaiyaan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-8 h-full flex flex-col">
+                                <div class="text-yellow-400 mb-4">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <h5 class="font-semibold text-base text-gray-800">Highly Satisfied</h5>
+                                <p class="text-gray-500 text-sm flex-grow mt-2">Best ever service. I first have
+                                    experience
+                                    with this type of service at home. Doctor is so gentle and he is explaining my
+                                    problem
+                                    and it is an unbelievable experience of physiotherapy. Quiet and supported team of
+                                    CB
+                                    Physiotherapy.</p>
+                                <div class="flex items-center mt-6">
+                                    <img alt="Chaitanya Aparna" class="w-10 h-10 rounded-full mr-4"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_o979m9pe16bRMlFTVICKf8UWMThd1eNeu8O01AKouqAAIlG42QbdNWjonZPnktTDqq9TSU6l1iXow8c8QxPfUj8Bz2WA5qwkli4a4S9Pe6ETOVEaSd34BIns2GBIOsBWZLssHNBhIKMK-EawWy83WKjVffVjR0yqfj4qAvYLUYjqWzfM4WGwJjdEpII6P4Gppn3solfzs9jLx65egpzGZfN-LZMHbYErXwCcSpCc1HCaxQmXmBPCfwgsGJouz54xEOPP_GNLUY" />
+                                    <span class="font-semibold">Chaitanya Aparna</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="w-3 h-3 rounded-full bg-[#00a896]"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section class="py-5 bg-white">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3">Faster &amp; Lasting Recovery</h2>
+                <div class="hr-teal mb-5"></div>
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="fw-bold fs-5 mb-2">Free 2nd</h4>
+                        <p class="text-muted fs-15">We provide free second opinion on your radiology reports
+                            (X-ray/MRI). This
+                            helps in better diagnosis and treatment planning.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="fw-bold fs-5 mb-2">Free Fit</h4>
+                        <p class="text-muted">Free Fitness Assessment to understand the overall fitness of an individual
+                            and help in achieving their fitness goals.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="fw-bold fs-5 mb-2">Free Track</h4>
+                        <p class="text-muted">A free tracking and monitoring system for all our patients. Patient's
+                            progress is tracked using validated outcome measures.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="fw-bold fs-5 mb-2">Activ Fit</h4>
+                        <p class="text-muted">Our specialised program to improve flexibility, strength, endurance and
+                            balance for an injury free active lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="bg-gray-100 py-5" id="Services">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3">OUR Specialities</h2>
+                <div class="hr-teal mb-4"></div>
+                <!-- <p class="col-lg-8 mx-auto text-muted mb-5">CB Physiotherapy offers expert physiotherapy treatment for
+                    a wide range of conditions. Our team of specialists is there to ensure the continuity of
+                    physiotherapy near you.</p> -->
+                <div class="row g-4">
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Advanced Physiotherapy" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/advanced.webp" />
+                        <p class="fw-semibold">Advanced Physiotherapy</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Cardio-Respiratory Physiotherapist"
+                            class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/cardio.webp" />
+                        <p class="fw-semibold">Cardio-Respiratory Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Neuro Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/Chiropractor.webp" />
+                        <p class="fw-semibold">Chiropractor</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Ergonomics Specialist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/ErgonomicsSpecialist.webp" />
+                        <p class="fw-semibold">Ergonomics Specialist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Geriatric Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/GeriatricPhysiotherapist.webp" />
+                        <p class="fw-semibold">Geriatric Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Home Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/HomePhysiotherapist.webp" />
+                        <p class="fw-semibold">Home Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Neuro Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/NeuroPhysiotherapist.webp" />
+                        <p class="fw-semibold">Neuro Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Ortho Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/OrthoPhysiotherapist.webp" />
+                        <p class="fw-semibold">Ortho Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Pediatric Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/PediatricPhysiotherapist.webp" />
+                        <p class="fw-semibold">Pediatric Physiotherapist</p>
+                    </div>
+
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/Physiotherapist.webp" />
+                        <p class="fw-semibold">Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Pediatric Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/PediatricPhysiotherapist.webp" />
+                        <p class="fw-semibold">Pediatric Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Physiotherapy Clinic" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/PhysiotherapyClinic.webp" />
+                        <p class="fw-semibold">Physiotherapy Clinic</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Pre And Post Surgery Rehabilitation"
+                            class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/PreAndPostSurgeryRehabilitation.webp" />
+                        <p class="fw-semibold">Prenatal and Postnatal Rehabilitation( Approved by IAFT, Mangaluru)</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Spinal Injury Physio" class="rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/SpinalInjuryPhysio.webp" />
+                        <p class="fw-semibold">Spinal Injury Physio</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Sports Massage Therapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/SportsMassageTherapist.webp" />
+                        <p class="fw-semibold">Sports Massage Therapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Sports Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/SportsPhysiotherapist.webp" />
+                        <p class="fw-semibold">Sports Physiotherapist</p>
+                    </div>
+
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Strength Training Specialist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/StrengthTrainingSpecialist.webp" />
+                        <p class="fw-semibold">Strength Training Specialist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Tele Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/TelePhysiotherapist.webp" />
+                        <p class="fw-semibold">Tele Physiotherapist</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Vestibular Rehabilitation (vrt)"
+                            class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/VestibularRehabilitation.webp" />
+                        <p class="fw-semibold">Vestibular Rehabilitation (vrt)</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Women's Health Therapist" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/Women'sHealthTherapist.webp" />
+                        <p class="fw-semibold">Women's Health Therapist</p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Orthopedic Rehabilitation" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/orthopedic-rehab.jpeg" />
+                        <p class="fw-semibold">Orthopedic Rehabilitation</p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <img alt="Geriatric Care" class="img-fluid rounded mb-2 card-img-top-speciality"
+                            src="/assets/image/services/GeriatricCare.jpeg" />
+                        <p class="fw-semibold">Geriatric Care</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- <section class="py-5 bg-white">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3">THOROUGHLY VETTED EXPERTS</h2>
+                <div class="hr-teal mb-4"></div>
+                <p class="col-lg-8 mx-auto text-muted mb-5">We believe in delivering the highest quality of
+                    physiotherapy care. All our physiotherapists are interviewed and trained to deliver the highest
+                    standard of care.</p>
+                <div class="d-flex flex-wrap justify-content-center gap-5">
+                    <div class="text-center">
+                        <img alt="Dr. Rahul Devan"
+                            class="rounded-circle object-cover mx-auto mb-3 border border-4 expert-img"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh357wpK-SDU4G5hUFQAD72jAq91jCRDzcL8jZmJ8o3jOcx0xAtoa6q1CQteuJPw4KI4FlWfXnQ6AIe9vXrgzcjonsYEc354cH8El5GYJ0yTxHarYDQxVn9NvnBLX3W1NLu87yWk5A0iWYEGP1iOy7EEWyboD2DY0mO9RVIk9w01xRyO6F_cUvRB-3FlJSlB_P0Sl6mfzfK7f3UTiX_lBwrNRcMGB4TUYq4g7l6WmXM5wBH0Y0euSo4Bvm9GM2oYnU4hf-8_HBKkQ" />
+                        <h4 class="fw-semibold fs-6">Dr. Rahul Devan</h4>
+                        <p class="text-muted small">MPT (Sports)</p>
+                        <p class="text-muted small">Ortho Physiotherapist</p>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Dr. Waseem Khan"
+                            class="rounded-circle object-cover mx-auto mb-3 border border-4 border-teal-400 expert-img"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbtjCr6vAwIWDYMIJFMpd1E-8UPDiBo9QQwdoHeL3rfuYJVSBC_Xc2a9p1a-XCOmtQMMgeRIj2mK4tNc9eomvYU4QW3aR8oi-ufI1RYapNJ8yWaknLVlXxAcuJuBUiH3yZ5oa9Oo89iVa83gli0HWHIXdXKaMgNSAm0thd19aBQJb0_RdHPNf37ktUTphc0OCK1lZfDnpDENKpDddEe-JeDkCmQ-z4rdhWJBvIL_EHpRMRrwLLsHDpa5_sKFeQFPwJ7_0l35AqLo" />
+                        <h4 class="fw-semibold fs-6">Dr. Waseem Khan</h4>
+                        <p class="text-muted small">MPT (Ortho)</p>
+                        <p class="text-muted small">Ortho Physiotherapist</p>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Dr. Anamika Kumari"
+                            class="rounded-circle object-cover mx-auto mb-3 border border-4 border-teal-400 expert-img"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt85CrXnB4V2r1OlybRHO8DZcnEwbo1EOO-uTLUa_MVHAAhG8PQaPiPpiUDTeEv26IxNURsWneZpgC_oMl7I97k7FX9VR6HERxUe9dEdtYW9fJKcWnmgjqT60oIH8PQ1vgZifcXmgzyPj9buRtvLzjIZKZLnt-PuQjG0lnHgIDO7CGZrOa4BNSv_lLK9nSk8onCE4RDvBC3qoRModorvuQlnsNZoe8CQcFtKdXcatGa2IBpMQqtlyi7tWOzpObzy7rQmN9wbcyjKA" />
+                        <h4 class="fw-semibold fs-6">Dr. Anamika Kumari</h4>
+                        <p class="text-muted small">MPT (Neuro)</p>
+                        <p class="text-muted small">Neuro Physiotherapist</p>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Dr. Tarun Parmar"
+                            class="rounded-circle object-cover mx-auto mb-3 border border-4 expert-img"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKBon7ksuvxssVlvuEA_ZFfY5Br4C0JFvjqlP9QtJWsilTJhExKNZ7tjGvO61c3d1DR3KoEPmq3L5MreOCqDE5onNfkrNbhfVnFSiPTrBSFV2EaHupGN0DzZ9iugCSPWUz1LHsS2rUBPgiVxOpNnZtcRyCjtDW8HI0cwK3hyD1OljEJr6mdf9U5rJaOXqC6r7NS95CCKVzoZNrLmDxuvVpTbfUUZMNMoYnjo7eUdS9TJhEd4L4FfcmwRPXMufdVyfL9KIv5-K11M8" />
+                        <h4 class="fw-semibold fs-6">Dr. Tarun Parmar</h4>
+                        <p class="text-muted small">BPT</p>
+                        <p class="text-muted small">Physiotherapist</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section class="bg-gray-100 py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">ADVANCED PHYSIOTHERAPY CLINICS</h2>
+                    <div class="hr-teal mb-4"></div>
+                    <p class="col-lg-8 mx-auto text-muted">Experience expert physiotherapy at our physiotherapy clinics.
+                        We
+                        are equipped with the latest technology for faster care and recovery. Our experts are there to
+                        help you in your journey to a pain free and active life.</p>
+                </div>
+                <div class="carousel slide" data-bs-ride="carousel" id="clinicCarousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card shadow-lg border-0 rounded-3 overflow-hidden col-lg-9 mx-auto">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center justify-content-center bg-white p-5">
+                                        <img alt="CB Physiotherapy Logo Green" class="img-fluid"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7_oITRYWuWwRL1gfJGk54FQEdTS2BMh_xswCmIlfzDMGoRT1QL_n7YBcyJIZcSiW9pube9UAVzu7eDYJU-hWqHO8b9VH38LUsUIgk74F51N3SoNla5_HeiDAniZ0Srk1hCqdSYLH7iIRijfnGal-oiCDYFNzBKRJKrzffiCeXOv6hR804lqlZG3w5e9AL4urV_OScLBijbodS1bMmWH82sXZqsolvBvX6yjVJoBOPvrLh1oioQvs9o0U_cLI0LP7N5Bxy5jhP2bU"
+                                            style="max-height: 96px" />
+                                    </div>
+                                    <div class="col-md-8 bg-dark-custom text-white p-5">
+                                        <h3 class="fs-4 fw-bold mb-4">CB PHYSIOTHERAPY CLINIC - GURGAON</h3>
+                                        <p class="d-flex align-items-start mb-2">
+                                            <i class="material-icons text-teal-400 mt-1 me-2">location_on</i>
+                                            <span>UG-47, Suncity Success Tower, Sector-65, Golf Course Extension
+                                                Road, Gurgaon, Haryana 122018</span>
+                                        </p>
+                                        <p class="d-flex align-items-center mb-2">
+                                            <i class="material-icons text-teal-400 me-2">call</i>
+                                            <span>+91-8810502344</span>
+                                        </p>
+                                        <p class="d-flex align-items-center mb-4">
+                                            <i class="material-icons text-teal-400 me-2">schedule</i>
+                                            <span>Mon - Sat : 9am - 8pm, Sun : 10am - 6pm</span>
+                                        </p>
+                                        <div class="d-flex gap-3">
+                                            <a class="text-white" href="#"><i class="material-icons">facebook</i></a>
+                                            <a class="text-white" href="#"><i class="material-icons">camera_alt</i></a>
+                                            <a class="text-white" href="#"><i class="material-icons">play_arrow</i></a>
+                                            <a class="text-white" href="#"><i class="material-icons">link</i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#clinicCarousel"
+                        type="button">
+                        <span class="material-icons text-dark">arrow_back_ios</span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#clinicCarousel"
+                        type="button">
+                        <span class="material-icons text-dark">arrow_forward_ios</span>
+                    </button>
+                </div>
+            </div>
+        </section> -->
+        <section class="py-5 bg-white">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3">WHAT WE TREAT</h2>
+                <div class="hr-teal mb-4"></div>
+                <p class="col-lg-8 mx-auto text-muted mb-5">We provide specialised physiotherapy treatment for
+                    musculoskeletal and neurological conditions, as well as sports-related conditions - addressing a
+                    wide
+                    range of ailments.</p>
+                <div class="row g-4 text-start">
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-5" style="color: #153C33; background-color: #e6efed;">
+                            <h3 class="fw-bold fs-5 mb-4 text-center" style="color: #3c152d;">Conditions</h3>
+                            <ul class="list-unstyled"
+                                style="height: 150px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: white transparent; cursor: pointer;">
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Sports
+                                    Injuries (Sprains, Strains, Ligament tears)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Stroke
+                                    Rehabilitation</li>
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Parkinson's
+                                    Disease</li>
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Balance and
+                                    Coordination Problems</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Nerve Injuries
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Developmental
+                                    Delays
+                                    Cerebral Palsy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Age-related joint stiffness
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Lumbar
+                                    Spondylosis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Pes
+                                    Anserine
+                                    Bursitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Quadriceps
+                                    Muscle Strain</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Herniated
+                                    Disk
+                                    Or Slipped Disc</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Clubfoot
+                                    Or
+                                    Congenital Talipes Equinovarus Or Ctev</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankle
+                                    Bone
+                                    Spur</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Total
+                                    Hip
+                                    Replacement (thr)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Swan
+                                    Neck
+                                    Deformity</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Erb’s
+                                    Palsy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Sprengel's
+                                    Shoulder</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Meralgia
+                                    Paresthetica</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tendinitis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Guillain-barré
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Fecal
+                                    Incontinence</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Radial
+                                    Nerve
+                                    Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Sacralization
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shoulder
+                                    Impingement</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Disc
+                                    Bulge
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Dyslexia
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Genu
+                                    Valgus
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Genu
+                                    Varum
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cauda
+                                    Equina
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Wartenberg’s
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shoulder
+                                    Arthropathy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cuboid
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Median
+                                    Nerve
+                                    Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hemangioma
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Raynaud’s
+                                    Disease</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Urinary
+                                    Incontinence</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Pelvic
+                                    Organ
+                                    Prolapse</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Motor
+                                    Neuron
+                                    Disease (mnd)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Complex
+                                    Regional Pain Syndrome (crps)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cervicogenic
+                                    Headache</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Infantile
+                                    Hemiparesis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Galeazzi
+                                    Fracture</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Lymphedema
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Wrist
+                                    Drop
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Trigger
+                                    Finger
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Retrolisthesis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Klumpke's
+                                    Palsy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Supraspinatus
+                                    Tendinitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Lumbarization
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Foot
+                                    Drop</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Smith
+                                    Fracture
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Gastrocnemius
+                                    Rupture</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Osgood-schlatter
+                                    Disease</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hill-sachs
+                                    Lesion</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hemiplegia
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Myositis
+                                    Ossification (mo)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Huntington's
+                                    Disease (hd)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Systemic
+                                    Lupus
+                                    Erythematosus (sle)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Reiter's
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Peripheral
+                                    Artery Disease (pad)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Lipedema
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cervical
+                                    Spondylosis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Frozen
+                                    Shoulder</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Vertigo
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Achilles
+                                    Tendon Rupture</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Carpal
+                                    Tunnel
+                                    Syndrome (cts)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Arthritis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Chondromalacia
+                                    Patella</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Knee
+                                    Bursitis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Anterior
+                                    Cruciate Ligament Tear (acl)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankle
+                                    Sprain
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cerebral
+                                    Palsy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Sciatica
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tennis
+                                    Elbow
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Baastrup
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Osteoarthritis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cervical
+                                    Myelopathy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Osteoporosis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Whiplash
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Rotator
+                                    Cuff
+                                    Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Scoliosis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Bell's
+                                    Palsy
+                                    Or Facial Palsy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Dementia
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Plantar
+                                    Fasciitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Concussion
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spinal
+                                    Stenosis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Rheumatoid
+                                    Arthritis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tailbone
+                                    Pain/coccydynia</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Piriformis
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Myasthenia
+                                    Gravis (mg)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Diabetic
+                                    Neuropathy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Degenerative
+                                    Disc Disease</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Distal
+                                    Muscular Dystrophy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Asthma
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Temporomandibular
+                                    Joint (tmj)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Stroke
+                                    Or
+                                    Cerebrovascular Accident (cva)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hamstring
+                                    Strain</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Fibromyalgia
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Total
+                                    Knee
+                                    Replacement (tkr)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Meniscal
+                                    Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spina
+                                    Bifida
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Down
+                                    Syndrome
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Torticollis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shoulder
+                                    Dislocation</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shoulder
+                                    And
+                                    Arm Fractures</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Elbow
+                                    Fractures</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Forearm
+                                    Fractures</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Wrist
+                                    Fracture
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hand
+                                    Fractures
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Mallet
+                                    Finger
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Boutonniere
+                                    Deformity</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ganglion
+                                    Cyst
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Burns
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>De
+                                    Quervain's
+                                    Tenosynovitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cubital
+                                    Tunnel
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Biceps
+                                    Tendonitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Radial
+                                    Tunnel
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hip
+                                    Fracture
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Trochanteric
+                                    Bursitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hip
+                                    Labral
+                                    Tear</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hip
+                                    Impingement</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hip
+                                    Osteoarthritis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Patellar
+                                    Fracture</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Patella
+                                    Dislocation</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Medial
+                                    Collateral Ligament (mcl) Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Lateral
+                                    Collateral Ligament (lcl) Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Posterior
+                                    Cruciate Ligament (pcl) Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Popliteal
+                                    (baker's) Cyst</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Varicose
+                                    Veins
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Patellar
+                                    Tendonitis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Deep
+                                    Venous
+                                    Thrombosis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Knee
+                                    Fracture
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Flat
+                                    Foot</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankle
+                                    Fracture
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankle
+                                    Syndesmosis Ligament Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankle
+                                    Dislocation</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tarsal
+                                    Tunnel
+                                    Syndrome</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankle
+                                    Instability</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Posterior
+                                    Tibial Tendon Dysfunction (pttd)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Metatarsalgia
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Bunion
+                                    Or
+                                    Hallux Valgus</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Morton's
+                                    Neuroma</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Diabetic
+                                    Foot
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Hammer
+                                    Toe
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Knee
+                                    Osteoarthritis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Golfer's
+                                    Elbow
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spondylolisthesis
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ankylosing
+                                    Spondylitis (as)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Discectomy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Laminectomy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Autism
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spinal
+                                    Fusion
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spinal
+                                    Cord
+                                    Injury</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Leprosy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Migraine
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Multiple
+                                    Sclerosis</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Quadriplegia
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ulnar
+                                    Nerve
+                                    Injury</li>
+                                <li class="d-flex align-items-center"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Transverse
+                                    Myelitis (tm)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-5" style="background-color: #e6efed;">
+                            <h3 class="fw-bold fs-5 mb-4 text-center">Symptoms</h3>
+                            <ul class="list-unstyled"
+                                style="height: 150px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: white transparent; cursor: pointer;">
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Muscle
+                                    Stiffness</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Muscle Spasm
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Crepitus -
+                                    Cracking Joints</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Numbness And
+                                    Tingling</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Neck Pain</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Foot Pain</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tremors</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Myalgia
+                                    (muscle Pain)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Knee Pain</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Back Pain</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Joint Pain
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shoulder Pain
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Loss Of
+                                    Balance</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Inflammation
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Headache</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shortness Of
+                                    Breath</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Sprains And
+                                    Strains</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-5" style="background-color: #e6efed;">
+                            <h3 class="fw-bold fs-5 mb-4 text-center">Therapies Offered</h3>
+                            <ul class="list-unstyled"
+                                style="height: 150px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: white transparent; cursor: pointer;">
+
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Electrotherapy
+                                    -(TENS, IFT, US, LASER, PEMF)
+
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Fitness
+                                    guidance ( Approved by IAFT Mangaluru)
+
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Nutrition
+                                    Guidance ( Approved by IAFT Mangaluru)
+
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Pilates
+                                    instructor
+
+
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Yoga
+                                    Instructor
+
+
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Manual Therapy
+
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Traction
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Wax Therapy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Kinesio Taping
+                                    / Taping Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Dry Needling
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Thermotherapy(heat
+                                    Therapy)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Transcutaneous
+                                    Electrical Nerve Stimulation(tens) Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Lymphatic
+                                    Drainage Massage</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Interferential
+                                    Therapy (ift)</li>
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Ultrasound
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Laser Therapy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Overhead Track
+                                    Harness Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tecar / Cret
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Manual Therapy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spinal
+                                    Decompression / Traction Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cupping
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Acupuncture
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Myofascial
+                                    Release (mfr)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Soft Tissue
+                                    Mobilization</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Pelvic Floor
+                                    Physical Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cryotherapy(cold
+                                    Therapy)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Chest
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shockwave
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Post-covid
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Shortwave
+                                    Diathermy (swd)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-5" style="background-color: #e6efed;">
+                            <h3 class="fw-bold fs-5 mb-4 text-center">Services Offered</h3>
+                            <ul class="list-unstyled"
+                                style="height: 150px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: white transparent; cursor: pointer;">
+
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Chiropractor
+                                    Treatment</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Sports
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Pediatric
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Home Care
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Neuro
+                                    Physiotherapy - Rehab</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Pre And Post
+                                    Surgery Rehabilitation</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Geriatric
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Strength
+                                    Training</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Advanced
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Women's Health
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Musculoskeletal
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Vestibular
+                                    Rehabilitation (vr)</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Workplace
+                                    Ergonomics : Assessment & Training</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Therapeutic
+                                    Massage</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Tele-physiotherapy
+                                </li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Cardiac
+                                    Rehabilitation</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Clinical
+                                    Physiotherapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Physical
+                                    Therapy</li>
+                                <li class="d-flex align-items-center mb-2"><i
+                                        class="material-icons text-teal-500 me-2">check_circle_outline</i>Spinal Injury
+                                    Rehabilitation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="bg-gray-100 py-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold">LATEST BLOGS</h2>
+                    <a class="btn btn-teal rounded-pill" href="#">View All Blogs <i
+                            class="material-icons ms-2 align-middle">arrow_forward</i></a>
+                </div>
+                <p class="col-lg-8 text-muted mb-5">Read our latest articles about physiotherapy and pain-free living,
+                    along with updates from the Physiotherapy community.</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img alt="Physiotherapy can help you get back on your feet" class="card-img-top"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkH1pWvgNHG-csGQxLb5o4fqeMyNFo7BFgTLGcQmq9TLNPYg0txbughUcga8WFPpCsy83NDvd9OO9gbINFjNiUiM8WGgAz1fNIuY_ExVURnboNcfBpYicRF-ZoXZ8FMV1uZrDAbzS7dBhtS89VTqqxcmzQ-WbC8RL1cyDlwIq8Qg7fOBqHkYji_8dyWEZr7ZXudGHeLomCWbzXvXrusMK5F-kOsKtv14YOfesOtsRpTQC2y_0PH9f0_s3GzvrAdLudRaq_XneodrA"
+                                style="height: 200px; object-fit: cover;" />
+                            <div class="card-body">
+                                <h3 class="card-title fw-semibold fs-5 mb-2">How Physiotherapy Can Help You Get Back
+                                    On...</h3>
+                                <p class="card-text text-muted small">Find out how physiotherapy can help you recover
+                                    from injuries and get back to your active lifestyle. Learn about the benefits and
+                                    what to expect.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img alt="Physiotherapy can help patient recover from COVID-19" class="card-img-top"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcQLsq1EIrrN29_B6R8_yuRAY0EiSQ5OCvgk_KIsAQmXrdul31TEW03bHSTZVUyeU2NlV5uJtsEeMktOZfcRZhuTA9qyOM8FCqDgZW8KRXv79DCmhKnrvTDnva4RL_h5eqwOOYNXKmkNRoOynm5I0H91j8hBeatVOW3hyE5PlC6wnRv_Gc8qCerQPL4m8PhZPDD2KF6dQN2-eAURAmA0OxM4x7JFF-JCFl5uC6hUn9EjLtOUWRiV8wsSwEdNSB9e0b0AAykwnaG18"
+                                style="height: 200px; object-fit: cover;" />
+                            <div class="card-body">
+                                <h3 class="card-title fw-semibold fs-5 mb-2">How Physiotherapy Can Help Patient Recover
+                                    f...</h3>
+                                <p class="card-text text-muted small">Physiotherapy plays a crucial role in the
+                                    rehabilitation of patients recovering from COVID-19, helping them regain strength
+                                    and lung capacity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img alt="Shoulder blade pain or medical problem" class="card-img-top"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIn3S7MDgvqceiQF76fpqyVzIvY2Lml-ZiaKuhEmEZdE1rGWmYrBtBAeyOxq5qcqwo-TQUlWE7tjfvrhHI1sBPjIj0R3VbIgalEBP3d6sFvaq4iliAKoOFQEuwfAfiyP4-pbS9kk9mW3SlwmbLqzvwo3V5ki7iRRMstuagKrhmyMrgCIVPx2bow8fRE-T2CQnqlGsCmladYvrGUe58LsIndm8Yzh72j8rF5hQFHue5m_RpJxAXeyiWQ39CvbhG0oYMi2_SLSLuV5k"
+                                style="height: 200px; object-fit: cover;" />
+                            <div class="card-body">
+                                <h3 class="card-title fw-semibold fs-5 mb-2">Shoulder Blade / Scapular Pain... Is it
+                                    Musc...</h3>
+                                <p class="card-text text-muted small">Understand the common causes of shoulder blade
+                                    pain and how to differentiate between a muscular issue and a more serious medical
+                                    problem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">FAQ's</h2>
+                    <p class="text-muted mt-2">Some commonly asked questions about our physiotherapy services. For more
+                        FAQs click here.</p>
+                </div>
+                <div class="accordion col-lg-8 mx-auto" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button aria-controls="collapseOne" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseOne"
+                                data-bs-toggle="collapse" type="button">
+                                What is Precision Care for Pain-Free Mobility?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingOne" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseOne">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button aria-controls="collapseTwo" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseTwo"
+                                data-bs-toggle="collapse" type="button">
+                                What are the Services Offered by CB Physiotherapy in India?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseTwo">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button aria-controls="collapseThree" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseThree"
+                                data-bs-toggle="collapse" type="button">
+                                Do the Physiotherapists provide Home Visits for Bedridden or Unaware Patients?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingThree" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseThree">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button aria-controls="collapseFour" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseFour"
+                                data-bs-toggle="collapse" type="button">
+                                How do I Book an Appointment for Clinic or Home Physiotherapy Services?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingFour" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseFour">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button aria-controls="collapseFive" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseFive"
+                                data-bs-toggle="collapse" type="button">
+                                Are your Physiotherapists Certified and Experienced?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingFive" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseFive">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section class="bg-gray-100 py-4">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-around align-items-center text-muted">
+                    <a class="text-muted text-decoration-none p-2" href="#">Hyderabad</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Jammu and Kashmir</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Himachal</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Haryana</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Bangalore</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Delhi</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Faridabad</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Ghaziabad</a>
+                </div>
+            </div>
+        </section> -->
+    </main>
+    <footer class="bg-dark text-white">
+        <div class="container py-5">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <img alt="CB Physiotherapy white logo" class="mb-4" src="./assets/image/Logo.webp"
+                        style="height: 48px" />
+                    <p class="text-secondary">A Hub of Rehabilitation & Fitness</p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="fw-semibold fs-5 mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Home</a></li>
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">About Us</a></li>
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Services</a></li>
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="fw-semibold fs-5 mb-4">More Services</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Home Care</a></li>
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Corporate</a></li>
+                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="fw-semibold fs-5 mb-4">Contact</h4>
+                    <p class="text-secondary d-flex align-items-center">
+                        <i class="material-icons me-2">email</i> mittal.sachendra891@gmail.com
+                    </p>
+                    <p class="text-secondary mt-2 d-flex align-items-center">
+                        <i class="material-icons me-2">call</i> +91-8970227764
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900 py-3">
+            <div class="container d-flex justify-content-between align-items-center small text-secondary">
+                <p class="mb-0">© Copyright 2025 Mittal's Physiofit
+                    All right reserved.</p>
+                <div class="d-flex gap-4">
+                    <p>Design &amp; Development By <a href="https://www.linkedin.com/in/alok-goyal-034082127/">Alok
+                            Goyal</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        // Countdown Timer
-        function setCountdown() {
-            const launchDate = new Date("2025-08-14T00:00:00").getTime();
-            const now = new Date().getTime();
-            const distance = launchDate - now;
+        function scrollToSection(sectionId) {
+            // Scroll to the section
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").textContent = days.toString().padStart(2, "0");
-            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-            document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-            document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById("countdown").innerHTML = "<p>We've Launched!</p>";
-            }
+            // // Update active tab styling
+            // document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+            // button.classList.add('active');
         }
-
-        const countdownInterval = setInterval(setCountdown, 1000);
     </script>
+
 </body>
+
 </html>
