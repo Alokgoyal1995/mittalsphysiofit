@@ -6,213 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Mittal's Physiofit</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-slide-in-left {
-            animation: slideInLeft 1s ease-out forwards;
-        }
-
-        .testimonial-carousel {
-            animation: slideRightToLeft 20s linear infinite;
-        }
-
-        @keyframes slideRightToLeft {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar-brand img {
-            height: 40px;
-        }
-
-        .hero-section {
-            position: relative;
-            height: 480px;
-            color: white;
-        }
-
-        .fs-15 {
-            font-size: 15px;
-        }
-
-        .hero-section .carousel-item {
-            height: 480px;
-        }
-
-        .hero-section .carousel-item img {
-            object-fit: cover;
-            height: 100%;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 650px;
-        }
-
-        .bg-teal-100 {
-            background-color: #E6FFFA;
-        }
-
-        .text-teal-500 {
-            color: #38B2AC;
-        }
-
-        .btn-teal {
-            background-color: #38B2AC;
-            color: white;
-        }
-
-        .btn-teal:hover {
-            background-color: #319795;
-            color: white;
-        }
-
-        .btn-outline-light {
-            border-color: white;
-            color: white;
-        }
-
-        .btn-outline-light:hover {
-            background-color: white;
-            color: #38B2AC;
-        }
-
-        .hr-teal {
-            width: 64px;
-            height: 4px;
-            background-color: #38B2AC;
-            margin: 0 auto;
-        }
-
-        .card-img-top-speciality {
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .expert-img {
-            width: 128px;
-            height: 128px;
-            object-fit: cover;
-        }
-
-        .border-teal-400 {
-            border-color: #4FD1C5 !important;
-        }
-
-        .bg-dark-custom {
-            background-color: #2D3748;
-        }
-
-        .text-teal-400 {
-            color: #4FD1C5;
-        }
-
-        .bg-gray-900 {
-            background-color: #1A202C;
-        }
-
-        .bg-gray-100 {
-            background-color: #F7FAFC;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            z-index: 3;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-slide-in-left {
-            animation: slideInLeft 1s ease-out forwards;
-        }
-
-        .testimonial-carousel {
-            animation: slideRightToLeft 20s linear infinite;
-        }
-
-        @keyframes slideRightToLeft {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="text-dark">
-    <!-- Top Bar -->
     <header class="bg-white shadow-sm">
         <div style="background-color: #153C33;">
             <div class="container py-2">
                 <div class="d-flex justify-content-between align-items-center small text-white">
                     <div>
-                        <span> <a href="tel:+919610164989" class="text-white"><i
-                                    class="material-icons text-sm align-middle">call</i></a>
-                            +91-9610164989</span>
-                        <!-- <span class="me-2"> <a href="tel:+918970227764" class="text-white"><i
-                                    class="material-icons text-sm align-middle">call</i></a>
-                            +91-8970227764</span> -->
+                        <span>
+                            <a href="tel:+919610164989" class="text-white">
+                                <i class="material-icons text-sm align-middle">call</i>
+                            </a>
+                            +91-9610164989
+                        </span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.instagram.com/mittalsphysiofit/" target="_blank" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mittal.sachendra891" target="_blank" class="text-white">
+                            <i class="fab fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@MMC-Allmedicalsubjects" target="_blank" class="text-white">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
                     </div>
                     <div>
                         <a href="https://classplusapp.com/w/mittalsmedicalclassesjigls" target="_blank"
-                            class="btn btn-danger d-inline-flex align-items-center px-3 py-2 shadow-sm rounded-pill">
-                            <img src="https://www.engineersacademy.org/images/red.gif" alt="Live" class="me-2"
-                                style="width:20px; height:20px; border-radius: 50%;">
+                            class="btn btn-danger d-inline-flex align-items-center shadow-sm rounded-pill"
+                            style="font-size:14px; padding: 3px 8px;">
+                            <img src="/assets/image/live-class.gif" alt="Live" class="me-2"
+                                style="width:14px; height:14px; border-radius: 50%;">
                             Live Classes
                         </a>
                     </div>
@@ -233,9 +65,18 @@
                         <ul class="navbar-nav">
                             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                            <li class="nav-item" onclick="scrollToSection('Services')"><a class="nav-link"
-                                    href="#">Services</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li> -->
+                            <!-- <li class="nav-item" onclick="scrollToSection('Services')"><a class="nav-link"
+                                    href="#">Services</a></li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#Services">Services</a>
+                            </li>
+                            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+
+                            <!-- <li class="nav-item" onclick="scrollToSection('Contact-us')"><a class="nav-link"
+                                    href="#">Contact Us</a></li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#Contact-us">Contact Us</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                     href="" id="navbarDropdown" role="button">
@@ -253,7 +94,6 @@
             </nav>
         </div>
     </header>
-
     <main>
         <section class="bg-custom-teal py-5">
             <div class="container text-center">
@@ -271,7 +111,7 @@
                                 <h2 class="h3 fw-bold text-center text-dark">Book Your Appointment</h2>
                                 <p class="text-center text-muted mb-5">Please Fill The Form</p>
                                 <form action="https://api.web3forms.com/submit" method="POST">
-                                    <input type="hidden" name="access_key" value="596ce226-8162-426e-9c8b-123bffd29bc6">
+                                    <input type="hidden" name="access_key" value="f66d53c0-0421-4100-ab8d-c77c25b35e02">
                                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                                     <div class="row g-4">
                                         <div class="col-12">
@@ -374,33 +214,39 @@
         <div class="container py-5">
             <div class="row gy-4">
                 <div class="col-md-3">
-                    <img alt="CB Physiotherapy white logo" class="mb-4" src="./assets/image/Logo.webp"
+                    <img alt="CB Physiotherapy white logo text-white" class="mb-4" src="./assets/image/Logo.webp"
                         style="height: 48px" />
                     <p class="text-secondary">A Hub of Rehabilitation & Fitness</p>
                 </div>
                 <div class="col-md-3">
                     <h4 class="fw-semibold fs-5 mb-4">Quick Links</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Home</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">About Us</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Services</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">FAQ</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="index.html">Home</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#Services">Services</a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" href="index.html#Contact-us">Contact Us</a>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h4 class="fw-semibold fs-5 mb-4">More Services</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Home Care</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Corporate</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Blog</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#">Home Care</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#">Corporate</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h4 class="fw-semibold fs-5 mb-4">Contact</h4>
-                    <p class="text-secondary d-flex align-items-center">
+                    <p class="d-flex align-items-center">
                         <i class="material-icons me-2">email</i> mittal.sachendra891@gmail.com
                     </p>
-                    <p class="text-secondary mt-2 d-flex align-items-center">
+                    <p class="mt-2 d-flex align-items-center">
                         <i class="material-icons me-2">call</i> +91-8970227764
                     </p>
                 </div>
@@ -408,10 +254,11 @@
         </div>
         <div class="bg-gray-900 py-3">
             <div class="container d-flex justify-content-between align-items-center small text-secondary">
-                <p class="mb-0">© Copyright 2025 Mittal's Physiofit
+                <p class="mb-0 text-white">© Copyright 2025 Mittal's Physiofit
                     All right reserved.</p>
                 <div class="d-flex gap-4">
-                    <p>Design &amp; Development By <a href="https://www.linkedin.com/in/alok-goyal-034082127/">Alok
+                    <p class="text-white">Design &amp; Development By <a
+                            href="https://www.linkedin.com/in/alok-goyal-034082127/">Alok
                             Goyal</a></p>
                 </div>
             </div>

@@ -11,158 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar-brand img {
-            /* height: 40px; */
-            width: 125px;
-        }
-
-        .hero-section {
-            position: relative;
-            height: 480px;
-            color: white;
-        }
-
-        .fs-15 {
-            font-size: 15px;
-        }
-
-        .hero-section .carousel-item {
-            height: 480px;
-        }
-
-        .hero-section .carousel-item img {
-            object-fit: cover;
-            height: 100%;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 650px;
-        }
-
-        .bg-teal-100 {
-            background-color: #E6FFFA;
-        }
-
-        .text-teal-500 {
-            color: #38B2AC;
-        }
-
-        .btn-teal {
-            background-color: #38B2AC;
-            color: white;
-        }
-
-        .btn-teal:hover {
-            background-color: #319795;
-            color: white;
-        }
-
-        .btn-outline-light {
-            border-color: white;
-            color: white;
-        }
-
-        .btn-outline-light:hover {
-            background-color: white;
-            color: #38B2AC;
-        }
-
-        .hr-teal {
-            width: 64px;
-            height: 4px;
-            background-color: #38B2AC;
-            margin: 0 auto;
-        }
-
-        .card-img-top-speciality {
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .expert-img {
-            width: 128px;
-            height: 128px;
-            object-fit: cover;
-        }
-
-        .border-teal-400 {
-            border-color: #4FD1C5 !important;
-        }
-
-        .bg-dark-custom {
-            background-color: #2D3748;
-        }
-
-        .text-teal-400 {
-            color: #4FD1C5;
-        }
-
-        .bg-gray-900 {
-            background-color: #1A202C;
-        }
-
-        .bg-gray-100 {
-            background-color: #F7FAFC;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            z-index: 3;
-        }
-
-        .treat-color {
-            color: #153C33;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-slide-in-left {
-            animation: slideInLeft 1s ease-out forwards;
-        }
-
-        .testimonial-carousel {
-            animation: slideRightToLeft 20s linear infinite;
-        }
-
-        @keyframes slideRightToLeft {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-light">
@@ -171,18 +21,30 @@
             <div class="container py-2">
                 <div class="d-flex justify-content-between align-items-center small text-white">
                     <div>
-                        <span> <a href="tel:+919610164989" class="text-white"><i
-                                    class="material-icons text-sm align-middle">call</i></a>
-                            +91-9610164989</span>
-                        <!-- <span class="me-2"> <a href="tel:+918970227764" class="text-white"><i
-                                    class="material-icons text-sm align-middle">call</i></a>
-                            +91-8970227764</span> -->
+                        <span>
+                            <a href="tel:+919610164989" class="text-white">
+                                <i class="material-icons text-sm align-middle">call</i>
+                            </a>
+                            +91-9610164989
+                        </span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.instagram.com/mittalsphysiofit/" target="_blank" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mittal.sachendra891" target="_blank" class="text-white">
+                            <i class="fab fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@MMC-Allmedicalsubjects" target="_blank" class="text-white">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
                     </div>
                     <div>
                         <a href="https://classplusapp.com/w/mittalsmedicalclassesjigls" target="_blank"
-                            class="btn btn-danger d-inline-flex align-items-center px-3 py-2 shadow-sm rounded-pill">
-                            <img src="https://www.engineersacademy.org/images/red.gif" alt="Live" class="me-2"
-                                style="width:20px; height:20px; border-radius: 50%;">
+                            class="btn btn-danger d-inline-flex align-items-center shadow-sm rounded-pill"
+                            style="font-size:14px; padding: 3px 8px;">
+                            <img src="/assets/image/live-class.gif" alt="Live" class="me-2"
+                                style="width:14px; height:14px; border-radius: 50%;">
                             Live Classes
                         </a>
                     </div>
@@ -203,16 +65,27 @@
                         <ul class="navbar-nav">
                             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                            <li class="nav-item" onclick="scrollToSection('Services')"><a class="nav-link"
-                                    href="#">Services</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li> -->
+                            <!-- <li class="nav-item" onclick="scrollToSection('Services')"><a class="nav-link"
+                                    href="#">Services</a></li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Services">Services</a>
+                            </li>
+                            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+
+                            <!-- <li class="nav-item" onclick="scrollToSection('Contact-us')"><a class="nav-link"
+                                    href="#">Contact Us</a></li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Contact-us">Contact Us</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                     href="" id="navbarDropdown" role="button">
                                     Download
                                 </a>
                                 <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                                    <li><a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1bRkVtug0i-sa3-pBaxMUQ1kaseH0frIm/view">Back Exercises</a></li>
+                                    <li><a class="dropdown-item" target="_blank"
+                                            href="https://drive.google.com/file/d/1bRkVtug0i-sa3-pBaxMUQ1kaseH0frIm/view">Back
+                                            Exercises</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -234,22 +107,33 @@
                         <img alt="..." class="d-block w-100" src="./assets/image/slider2.webp" />
                     </div>
                     <div class="carousel-item">
-                        <img alt="..." class="d-block w-100" src="./assets/image/slider1.webp" />
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider3.jpg" />
                     </div>
+                    <div class="carousel-item">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider4.jpg" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider5.jpg" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider6.jpg" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="..." class="d-block w-100" src="./assets/image/slider7.jpg" />
+                    </div>
+
                 </div>
             </div>
             <div class="hero-content text-center px-4">
-                <h2 class="display-4 fw-bold mb-4">Precision Care for <br /> Pain-Free Mobility</h2>
+                <h2 class="display-4 fw-bold mb-4" id="carouselHeading">Precision Care for Pain-Free Mobility</h2>
                 <p class="mb-4 lead fs-15">We offer advanced physiotherapy treatment by highly skilled physiotherapists
                     at
                     our clinics or at your home. We've helped thousands of patients to get back to their active life.
                 </p>
-                <a class="btn btn-outline-light btn-lg fw-semibold py-2 px-3 fs-15"
+                <a class="btn btn-outline-light btn-lg fw-semibold py-2 px-3 fs-15 mb-3 mb-md-0"
                     href="./requestcallback.html">Request Callback</a>
                 <a class="btn btn-teal btn-lg fw-semibold py-2 px-3 me-md-2 mb-3 mb-md-0 fs-15"
-                    href="./bookappoitment.html">Book an
-                    Appointment
-                    Now</a>
+                    href="./bookappoitment.html">Book an Appointment Now</a>
             </div>
         </section>
         <section class="py-4" style="background-color: #153C33;">
@@ -665,7 +549,7 @@
         </section> -->
         <section class="bg-gray-100 py-5" id="Services">
             <div class="container text-center">
-                <h2 class="fw-bold mb-3">OUR Specialities</h2>
+                <h2 class="fw-bold mb-3">Our Specialities (Services offered)</h2>
                 <div class="hr-teal mb-4"></div>
                 <!-- <p class="col-lg-8 mx-auto text-muted mb-5">CB Physiotherapy offers expert physiotherapy treatment for
                     a wide range of conditions. Our team of specialists is there to ensure the continuity of
@@ -692,11 +576,11 @@
                             src="/assets/image/services/ErgonomicsSpecialist.webp" />
                         <p class="fw-semibold">Ergonomics Specialist</p>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-6">
+                    <!-- <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Geriatric Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/GeriatricPhysiotherapist.webp" />
                         <p class="fw-semibold">Geriatric Physiotherapist</p>
-                    </div>
+                    </div> -->
                     <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Home Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/HomePhysiotherapist.webp" />
@@ -719,37 +603,37 @@
                     </div>
 
 
-                    <div class="col-lg-2 col-md-4 col-6">
+                    <!-- <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/Physiotherapist.webp" />
                         <p class="fw-semibold">Physiotherapist</p>
-                    </div>
+                    </div> -->
                     <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Pediatric Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/PediatricPhysiotherapist.webp" />
                         <p class="fw-semibold">Pediatric Physiotherapist</p>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-6">
+                    <!-- <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Physiotherapy Clinic" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/PhysiotherapyClinic.webp" />
                         <p class="fw-semibold">Physiotherapy Clinic</p>
-                    </div>
+                    </div> -->
                     <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Pre And Post Surgery Rehabilitation"
                             class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/PreAndPostSurgeryRehabilitation.webp" />
                         <p class="fw-semibold">Prenatal and Postnatal Rehabilitation( Approved by IAFT, Mangaluru)</p>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-6">
+                    <!-- <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Spinal Injury Physio" class="rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/SpinalInjuryPhysio.webp" />
                         <p class="fw-semibold">Spinal Injury Physio</p>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-6">
+                    </div> -->
+                    <!-- <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Sports Massage Therapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/SportsMassageTherapist.webp" />
                         <p class="fw-semibold">Sports Massage Therapist</p>
-                    </div>
+                    </div> -->
                     <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Sports Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/SportsPhysiotherapist.webp" />
@@ -757,11 +641,11 @@
                     </div>
 
 
-                    <div class="col-lg-2 col-md-4 col-6">
+                    <!-- <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Strength Training Specialist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/StrengthTrainingSpecialist.webp" />
                         <p class="fw-semibold">Strength Training Specialist</p>
-                    </div>
+                    </div> -->
                     <div class="col-lg-2 col-md-4 col-6">
                         <img alt="Tele Physiotherapist" class="img-fluid rounded mb-2 card-img-top-speciality"
                             src="/assets/image/services/TelePhysiotherapist.webp" />
@@ -894,6 +778,164 @@
                 </div>
             </div>
         </section> -->
+
+        <!-- <section class="bg-gray-100 py-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold">LATEST BLOGS</h2>
+                    <a class="btn btn-teal rounded-pill" href="#">View All Blogs <i
+                            class="material-icons ms-2 align-middle">arrow_forward</i></a>
+                </div>
+                <p class="col-lg-8 text-muted mb-5">Read our latest articles about physiotherapy and pain-free living,
+                    along with updates from the Physiotherapy community.</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img alt="Physiotherapy can help you get back on your feet" class="card-img-top"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkH1pWvgNHG-csGQxLb5o4fqeMyNFo7BFgTLGcQmq9TLNPYg0txbughUcga8WFPpCsy83NDvd9OO9gbINFjNiUiM8WGgAz1fNIuY_ExVURnboNcfBpYicRF-ZoXZ8FMV1uZrDAbzS7dBhtS89VTqqxcmzQ-WbC8RL1cyDlwIq8Qg7fOBqHkYji_8dyWEZr7ZXudGHeLomCWbzXvXrusMK5F-kOsKtv14YOfesOtsRpTQC2y_0PH9f0_s3GzvrAdLudRaq_XneodrA"
+                                style="height: 200px; object-fit: cover;" />
+                            <div class="card-body">
+                                <h3 class="card-title fw-semibold fs-5 mb-2">How Physiotherapy Can Help You Get Back
+                                    On...</h3>
+                                <p class="card-text text-muted small">Find out how physiotherapy can help you recover
+                                    from injuries and get back to your active lifestyle. Learn about the benefits and
+                                    what to expect.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img alt="Physiotherapy can help patient recover from COVID-19" class="card-img-top"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcQLsq1EIrrN29_B6R8_yuRAY0EiSQ5OCvgk_KIsAQmXrdul31TEW03bHSTZVUyeU2NlV5uJtsEeMktOZfcRZhuTA9qyOM8FCqDgZW8KRXv79DCmhKnrvTDnva4RL_h5eqwOOYNXKmkNRoOynm5I0H91j8hBeatVOW3hyE5PlC6wnRv_Gc8qCerQPL4m8PhZPDD2KF6dQN2-eAURAmA0OxM4x7JFF-JCFl5uC6hUn9EjLtOUWRiV8wsSwEdNSB9e0b0AAykwnaG18"
+                                style="height: 200px; object-fit: cover;" />
+                            <div class="card-body">
+                                <h3 class="card-title fw-semibold fs-5 mb-2">How Physiotherapy Can Help Patient Recover
+                                    f...</h3>
+                                <p class="card-text text-muted small">Physiotherapy plays a crucial role in the
+                                    rehabilitation of patients recovering from COVID-19, helping them regain strength
+                                    and lung capacity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img alt="Shoulder blade pain or medical problem" class="card-img-top"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIn3S7MDgvqceiQF76fpqyVzIvY2Lml-ZiaKuhEmEZdE1rGWmYrBtBAeyOxq5qcqwo-TQUlWE7tjfvrhHI1sBPjIj0R3VbIgalEBP3d6sFvaq4iliAKoOFQEuwfAfiyP4-pbS9kk9mW3SlwmbLqzvwo3V5ki7iRRMstuagKrhmyMrgCIVPx2bow8fRE-T2CQnqlGsCmladYvrGUe58LsIndm8Yzh72j8rF5hQFHue5m_RpJxAXeyiWQ39CvbhG0oYMi2_SLSLuV5k"
+                                style="height: 200px; object-fit: cover;" />
+                            <div class="card-body">
+                                <h3 class="card-title fw-semibold fs-5 mb-2">Shoulder Blade / Scapular Pain... Is it
+                                    Musc...</h3>
+                                <p class="card-text text-muted small">Understand the common causes of shoulder blade
+                                    pain and how to differentiate between a muscular issue and a more serious medical
+                                    problem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">FAQ's</h2>
+                    <p class="text-muted mt-2">Some commonly asked questions about our physiotherapy services. For more
+                        FAQs click here.</p>
+                </div>
+                <div class="accordion col-lg-8 mx-auto" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button aria-controls="collapseOne" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseOne"
+                                data-bs-toggle="collapse" type="button">
+                                What is Precision Care for Pain-Free Mobility?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingOne" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseOne">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button aria-controls="collapseTwo" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseTwo"
+                                data-bs-toggle="collapse" type="button">
+                                What are the Services Offered by CB Physiotherapy in India?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseTwo">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button aria-controls="collapseThree" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseThree"
+                                data-bs-toggle="collapse" type="button">
+                                Do the Physiotherapists provide Home Visits for Bedridden or Unaware Patients?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingThree" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseThree">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button aria-controls="collapseFour" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseFour"
+                                data-bs-toggle="collapse" type="button">
+                                How do I Book an Appointment for Clinic or Home Physiotherapy Services?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingFour" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseFour">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button aria-controls="collapseFive" aria-expanded="false"
+                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseFive"
+                                data-bs-toggle="collapse" type="button">
+                                Are your Physiotherapists Certified and Experienced?
+                            </button>
+                        </h2>
+                        <div aria-labelledby="headingFive" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion" id="collapseFive">
+                            <div class="accordion-body">
+                                Some content here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- <section class="bg-gray-100 py-4">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-around align-items-center text-muted">
+                    <a class="text-muted text-decoration-none p-2" href="#">Hyderabad</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Jammu and Kashmir</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Himachal</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Haryana</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Bangalore</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Delhi</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Faridabad</a>
+                    <a class="text-muted text-decoration-none p-2" href="#">Ghaziabad</a>
+                </div>
+            </div>
+        </section> -->
+
         <section class="py-5 bg-white">
             <div class="container text-center">
                 <h2 class="fw-bold mb-3">WHAT WE TREAT</h2>
@@ -1500,7 +1542,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 text-center">
                         <div class="p-4 rounded-5" style="background-color: #e6efed;">
                             <h3 class="fw-bold fs-5 mb-4 text-center">Therapies Offered</h3>
                             <ul class="list-unstyled"
@@ -1575,9 +1617,9 @@
                                 <li class="d-flex align-items-center mb-2"><i
                                         class="material-icons text-teal-500 me-2">check_circle_outline</i>Tecar / Cret
                                     Therapy</li>
-                                <li class="d-flex align-items-center mb-2"><i
+                                <!-- <li class="d-flex align-items-center mb-2"><i
                                         class="material-icons text-teal-500 me-2">check_circle_outline</i>Manual Therapy
-                                </li>
+                                </li> -->
                                 <li class="d-flex align-items-center mb-2"><i
                                         class="material-icons text-teal-500 me-2">check_circle_outline</i>Spinal
                                     Decompression / Traction Therapy</li>
@@ -1614,7 +1656,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <div class="p-4 rounded-5" style="background-color: #e6efed;">
                             <h3 class="fw-bold fs-5 mb-4 text-center">Services Offered</h3>
                             <ul class="list-unstyled"
@@ -1679,10 +1721,11 @@
                                     Rehabilitation</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
+
         <!-- <section class="bg-gray-100 py-5">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -1738,138 +1781,107 @@
                 </div>
             </div>
         </section> -->
-        <!-- <section class="py-5 bg-white">
+
+
+        <section class="bg-light d-flex align-items-center justify-content-center py-5" id="Contact-us">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bold">FAQ's</h2>
-                    <p class="text-muted mt-2">Some commonly asked questions about our physiotherapy services. For more
-                        FAQs click here.</p>
-                </div>
-                <div class="accordion col-lg-8 mx-auto" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button aria-controls="collapseOne" aria-expanded="false"
-                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseOne"
-                                data-bs-toggle="collapse" type="button">
-                                What is Precision Care for Pain-Free Mobility?
-                            </button>
-                        </h2>
-                        <div aria-labelledby="headingOne" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion" id="collapseOne">
-                            <div class="accordion-body">
-                                Some content here.
+                <div class="bg-white p-4 p-md-5 rounded shadow-lg w-100">
+                    <div class="row g-5">
+                        <div class="col-md-7">
+                            <h1 class="display-5 fw-bold text-dark mb-4">Have More Questions?</h1>
+                            <p class="text-muted mb-4">
+                                If you have any queries or concerns, shoot them at us. Drop your details below and we'll
+                                get in touch with you.
+                            </p>
+                            <div class="d-flex flex-column gap-3 text-dark">
+                                <div class="d-flex align-items-start">
+                                    <span class="material-icons me-3">location_on</span>
+                                    <p>Mittal's Physiofit, C-215, Tirupati vihar, New Sanganer Road, Manyavyas,
+                                        Near St. Angel School, Jaipur - 302020</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="material-icons  me-3">call</span>
+                                    <p>+91 8970227764, 8905317764</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="material-icons  me-3">email</span>
+                                    <p>mittal.sachendra891@gmail.com</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button aria-controls="collapseTwo" aria-expanded="false"
-                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseTwo"
-                                data-bs-toggle="collapse" type="button">
-                                What are the Services Offered by CB Physiotherapy in India?
-                            </button>
-                        </h2>
-                        <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion" id="collapseTwo">
-                            <div class="accordion-body">
-                                Some content here.
-                            </div>
+                        <div class="col-md-5">
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="f66d53c0-0421-4100-ab8d-c77c25b35e02">
+
+                                <div class="mb-3">
+                                    <label class="visually-hidden" for="name">Name</label>
+                                    <input class="form-control  rounded" id="name" placeholder="Name" type="text"
+                                        name="name" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="visually-hidden" for="phone">Phone Number</label>
+                                    <input class="form-control  rounded" id="phone" placeholder="Phone Number"
+                                        name="mobile" type="tel" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="visually-hidden" for="email">Email ID</label>
+                                    <input class="form-control  rounded" id="email" placeholder="Email ID" name="email"
+                                        type="email" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="visually-hidden" for="message">Your Message</label>
+                                    <textarea class="form-control  rounded" id="message" placeholder="Your Message"
+                                        name="message" rows="4"></textarea>
+                                </div>
+                                <button class="btn btn-teal w-100 fw-bold py-2" type="submit">
+                                    CONTACT NOW
+                                </button>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button aria-controls="collapseThree" aria-expanded="false"
-                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseThree"
-                                data-bs-toggle="collapse" type="button">
-                                Do the Physiotherapists provide Home Visits for Bedridden or Unaware Patients?
-                            </button>
-                        </h2>
-                        <div aria-labelledby="headingThree" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion" id="collapseThree">
-                            <div class="accordion-body">
-                                Some content here.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button aria-controls="collapseFour" aria-expanded="false"
-                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseFour"
-                                data-bs-toggle="collapse" type="button">
-                                How do I Book an Appointment for Clinic or Home Physiotherapy Services?
-                            </button>
-                        </h2>
-                        <div aria-labelledby="headingFour" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion" id="collapseFour">
-                            <div class="accordion-body">
-                                Some content here.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button aria-controls="collapseFive" aria-expanded="false"
-                                class="accordion-button collapsed fw-semibold" data-bs-target="#collapseFive"
-                                data-bs-toggle="collapse" type="button">
-                                Are your Physiotherapists Certified and Experienced?
-                            </button>
-                        </h2>
-                        <div aria-labelledby="headingFive" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion" id="collapseFive">
-                            <div class="accordion-body">
-                                Some content here.
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section> -->
-        <!-- <section class="bg-gray-100 py-4">
-            <div class="container">
-                <div class="d-flex flex-wrap justify-content-around align-items-center text-muted">
-                    <a class="text-muted text-decoration-none p-2" href="#">Hyderabad</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Jammu and Kashmir</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Himachal</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Haryana</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Bangalore</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Delhi</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Faridabad</a>
-                    <a class="text-muted text-decoration-none p-2" href="#">Ghaziabad</a>
-                </div>
-            </div>
-        </section> -->
+        </section>
+
+
     </main>
     <footer class="bg-dark text-white">
         <div class="container py-5">
             <div class="row gy-4">
                 <div class="col-md-3">
-                    <img alt="CB Physiotherapy white logo" class="mb-4" src="./assets/image/Logo.webp"
+                    <img alt="CB Physiotherapy white logo text-white" class="mb-4" src="./assets/image/Logo.webp"
                         style="height: 48px" />
                     <p class="text-secondary">A Hub of Rehabilitation & Fitness</p>
                 </div>
                 <div class="col-md-3">
                     <h4 class="fw-semibold fs-5 mb-4">Quick Links</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Home</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">About Us</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Services</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">FAQ</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="index.html">Home</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#Services">Services</a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" href="index.html#Contact-us">Contact Us</a>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h4 class="fw-semibold fs-5 mb-4">More Services</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Home Care</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Corporate</a></li>
-                        <li class="mb-2"><a class="text-secondary text-decoration-none" href="#">Blog</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#">Home Care</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#">Corporate</a></li>
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h4 class="fw-semibold fs-5 mb-4">Contact</h4>
-                    <p class="text-secondary d-flex align-items-center">
+                    <p class="d-flex align-items-center">
                         <i class="material-icons me-2">email</i> mittal.sachendra891@gmail.com
                     </p>
-                    <p class="text-secondary mt-2 d-flex align-items-center">
+                    <p class="mt-2 d-flex align-items-center">
                         <i class="material-icons me-2">call</i> +91-8970227764
                     </p>
                 </div>
@@ -1877,10 +1889,11 @@
         </div>
         <div class="bg-gray-900 py-3">
             <div class="container d-flex justify-content-between align-items-center small text-secondary">
-                <p class="mb-0">© Copyright 2025 Mittal's Physiofit
+                <p class="mb-0 text-white">© Copyright 2025 Mittal's Physiofit
                     All right reserved.</p>
                 <div class="d-flex gap-4">
-                    <p>Design &amp; Development By <a href="https://www.linkedin.com/in/alok-goyal-034082127/">Alok
+                    <p class="text-white">Design &amp; Development By <a
+                            href="https://www.linkedin.com/in/alok-goyal-034082127/">Alok
                             Goyal</a></p>
                 </div>
             </div>
@@ -1894,11 +1907,26 @@
             // Scroll to the section
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
-
-            // // Update active tab styling
-            // document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
-            // button.classList.add('active');
         }
+    </script>
+
+    <script>
+        const headings = [
+            "Precision Care for Pain-Free Mobility",
+            "Restore Strength with Expert Therapy",
+            "Move Freely with Personalized Care",
+            "Empowering Active Lifestyles",
+            "Relieve Pain, Regain Mobility",
+            "Advanced Physiotherapy Solutions",
+            "Your Path to Pain-Free Living"
+        ];
+
+        const carousel = document.getElementById('heroCarousel');
+        const headingElement = document.getElementById('carouselHeading');
+
+        carousel.addEventListener('slide.bs.carousel', function (event) {
+            headingElement.innerHTML = headings[event.to];
+        });
     </script>
 
 </body>
