@@ -167,3 +167,170 @@
                 transform: translateX(-100%);
             }
         }
+
+        .sticky-icons {
+            position: fixed;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* Adjusted gap */
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* White with transparency */
+            padding: 10px;
+            border-radius: 15px;
+            /* Rounded rectangle */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .sticky-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            /* Reduced size */
+            height: 40px;
+            /* Reduced size */
+            border-radius: 50%;
+            /* Circular icons */
+            background-color: #153C33;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            /* Smooth zoom transition */
+        }
+
+        .sticky-icons a:hover {
+            transform: scale(1.2);
+            /* Zoom effect on hover */
+        }
+
+        .sticky-icons i {
+            font-size: 20px;
+            /* Reduced icon size */
+            color: white;
+            /* White icons */
+        }
+
+        .service-item {
+            width: 320px;
+            flex: 0 0 auto;
+            /* Removed fixed min-height to let content dictate height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+            /* Added to ensure the container grows with content */
+            height: auto;
+        }
+
+        .service-item img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            /* Let the image scale naturally */
+            /* Removed object-fit: cover to avoid cropping; use object-fit: contain if needed */
+            object-fit: contain;
+            /* Ensures the entire image is visible */
+            border-radius: 24px;
+            /* Added to center the image vertically within its space */
+            margin: 0 auto;
+        }
+
+        .service-item p {
+            letter-spacing: 0.2px;
+            margin: 12px 8px 0;
+            width: 100%;
+            text-align: center;
+            white-space: normal;
+            overflow: visible;
+            /* Ensure no text is clipped */
+            font-size: 16px;
+            line-height: 1.4;
+            /* Added to ensure text wraps and fits */
+            word-break: break-word;
+        }
+
+        /* Alternating up/down effect */
+        .service-item:nth-child(odd) {
+            transform: translateY(-22px);
+        }
+
+        .service-item:nth-child(even) {
+            transform: translateY(22px);
+        }
+
+        /* Scroller core */
+        .service-track {
+            width: max-content;
+            animation: services-marquee 40s linear infinite;
+        }
+
+        .service-seq {
+            /* Two identical sequences sit side-by-side */
+        }
+
+        /* Seamless loop animation */
+        @keyframes services-marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 991.98px) {
+            .service-item {
+                width: 280px;
+                padding: 6px;
+                height: auto;
+            }
+
+            .service-item img {
+                max-height: 200px;
+                /* Cap height but allow natural scaling */
+                object-fit: contain;
+            }
+
+            .service-item p {
+                font-size: 15px;
+                margin: 10px 6px 0;
+                line-height: 1.3;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .service-item {
+                width: 280px;
+                padding: 4px;
+                height: auto;
+            }
+
+            .service-item img {
+                max-height: 280px;
+                object-fit: contain;
+            }
+
+            .service-item p {
+                font-size: 14px;
+                margin: 8px 4px 0;
+                line-height: 1.2;
+            }
+
+            .service-item:nth-child(odd),
+            .service-item:nth-child(even) {
+                transform: translateY(12px);
+            }
+        }
+
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .service-track {
+                animation: none;
+            }
+        }
