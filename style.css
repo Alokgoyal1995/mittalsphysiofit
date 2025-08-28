@@ -272,6 +272,102 @@
             /* Two identical sequences sit side-by-side */
         }
 
+        .live-btn {
+            font-size: 14px;
+            padding: 3px 8px;
+        }
+
+        .text-teal-600 {
+            color: #0d9488;
+        }
+
+        .bg-teal-600 {
+            background-color: #0d9488;
+        }
+
+        .border-teal-600 {
+            border-color: #0d9488;
+        }
+
+        .bg-teal-700 {
+            background-color: #0c7a6e;
+        }
+
+        .section-title {
+            color: #0d9488;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            background-color: #0d9488;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0c7a6e;
+            color: white;
+        }
+
+        .highlight-box {
+            background-color: #f8fafc;
+            border-left: 5px solid #0d9488;
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0d9488;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        @keyframes pulse-border {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+                /* Bootstrap danger color */
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+            }
+        }
+
+        .animate-ping {
+            animation: pulse-border 1.5s infinite;
+        }
+
+
+
         /* Seamless loop animation */
         @keyframes services-marquee {
             from {
@@ -325,6 +421,11 @@
             .service-item:nth-child(odd),
             .service-item:nth-child(even) {
                 transform: translateY(12px);
+            }
+
+            .live-btn {
+                font-size: 12px;
+                padding: 2px 6px;
             }
         }
 
