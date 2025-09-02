@@ -435,3 +435,13 @@
                 animation: none;
             }
         }
+
+        .cta-button-ap {
+            background-color: #212121;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
