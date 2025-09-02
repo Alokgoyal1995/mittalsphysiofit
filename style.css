@@ -402,7 +402,9 @@
 
         @media (max-width: 767px) {
             .cta-button-ap {
-                font-size: 12px;
+                font-size: 10px;
+                font-weight: 100;
+                padding: 4px 5px;
             }
         }
 

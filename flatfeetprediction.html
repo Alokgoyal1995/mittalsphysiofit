@@ -411,16 +411,19 @@
 
             // Add interpretation based on Navicular Drop criteria
 
-            resultInterpretation.innerHTML = `After calculating, if you find your Navicular drop drop is <span style="font-weight : bold"> equal or more than 10 mm, </span> then you should consider Acquired flat feet. <br> Book a consultation at Mittal’s Physiofit Clinic and<p class="text-center mt-3">
-                        <a href="bookappoitment.html" class="cta-button-ap mt-4">✨ Schedule  Your Appointment Today</a>
-                    </p>`
-            // if (archHeightDifference >= 10) {
-            //     resultInterpretation.innerHTML = `Your Navicular Drop is ≥ 10 mm, <br>  indicating a  <strong> higher chance of acquired flat feet. </strong> <br/> So immediately you should consider your BMI.<br/> <a href="bookappoitment.html" class="consultation-link">Book a consultation at Mittal’s Physiofit Clinic and schedule your appointment today.</a>`;
-            //     resultInterpretation.style.color = '#fff';
-            // } else {
-            //     resultInterpretation.innerHTML = `Your Navicular Drop is < 10 mm, <br> indicating a <strong>lower likelihood of acquired flat feet.</strong>`;
-            //     resultInterpretation.style.color = '#c6f6d5';
-            // }
+            // resultInterpretation.innerHTML = `After calculating, if you find your Navicular drop drop is <span style="font-weight : bold"> equal or more than 10 mm, </span> then you should consider Acquired flat feet. <br> Book a consultation at Mittal’s Physiofit Clinic and<p class="text-center mt-3">
+            //             <a href="bookappoitment.html" class="cta-button-ap mt-4">✨ Schedule  Your Appointment Today</a>
+            //         </p>`
+            if (archHeightDifference >= 10) {
+                resultInterpretation.innerHTML = `Your Navicular Drop is more than 10 mm, which indicates Acquired flat feet. <br> We recommend booking a consultation at Mittal’s Physiofit Clinic for proper assessment and treatment. <br>
+                <p class="text-center mt-3"> <a href="bookappoitment.html" class="cta-button-ap mt-4">✨ Schedule  Your Appointment Today</a>
+                     </p>
+`;
+                resultInterpretation.style.color = '#fff';
+            } else {
+                resultInterpretation.innerHTML = `Your Navicular Drop is less than 10 mm, which suggests your feet are normal and fit. <br> No treatment is required at this stage.`;
+                resultInterpretation.style.color = '#c6f6d5';
+            }
 
             // Smooth scroll to result
             resultFooter.scrollIntoView({ behavior: 'smooth' });
