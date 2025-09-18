@@ -1446,7 +1446,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center">
+                    <div class="col-md-6 mx-auto">
                         <div class="p-4 rounded-5" style="background-color: #e6efed;">
                             <h3 class="fw-bold fs-5 mb-4 text-center">Therapies Offered</h3>
                             <ul class="list-unstyled"
@@ -1616,6 +1616,7 @@
                         </div>
                     </div> -->
                 </div>
+
             </div>
         </section>
 
@@ -1789,26 +1790,27 @@
                         <div class="col-md-5">
                             <form action="https://api.web3forms.com/submit" method="POST">
                                 <input type="hidden" name="access_key" value="f66d53c0-0421-4100-ab8d-c77c25b35e02">
-
+                                <input type="hidden" name="subject"
+                                    value="You Have a New General Contact Enquiry – Mittal's Physiofit">
                                 <div class="mb-3">
                                     <label class="visually-hidden" for="name">Name</label>
                                     <input class="form-control  rounded" id="name" placeholder="Name" type="text"
-                                        name="name" />
+                                        name="name" required />
                                 </div>
                                 <div class="mb-3">
                                     <label class="visually-hidden" for="phone">Phone Number</label>
                                     <input class="form-control  rounded" id="phone" placeholder="Phone Number"
-                                        name="mobile" type="tel" />
+                                        name="mobile" type="tel" required />
                                 </div>
                                 <div class="mb-3">
                                     <label class="visually-hidden" for="email">Email ID</label>
                                     <input class="form-control  rounded" id="email" placeholder="Email ID" name="email"
-                                        type="email" />
+                                        type="email" required />
                                 </div>
                                 <div class="mb-3">
                                     <label class="visually-hidden" for="message">Your Message</label>
                                     <textarea class="form-control  rounded" id="message" placeholder="Your Message"
-                                        name="message" rows="4"></textarea>
+                                        name="message" rows="4" required></textarea>
                                 </div>
                                 <button class="btn btn-teal w-100 fw-bold py-2" type="submit">
                                     CONTACT NOW
@@ -1894,14 +1896,36 @@
                 </div>
             </div>
         </div>
-        <div class="bg-gray-900 py-1">
-            <div class="container d-flex justify-content-between align-items-center small text-secondary">
-                <p class="mb-0 text-white">© Copyright 2025 Mittal's Physiofit
-                    All right reserved.</p>
-                <div class="d-flex gap-4">
-                    <p class="text-white">Design &amp; Development By <a
-                            href="https://www.linkedin.com/in/alok-goyal-034082127/">Alok
-                            Goyal</a></p>
+        <div class="bg-gray-900 py-3">
+            <div
+                class="container d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary">
+                <p class="mb-0 text-white text-center text-md-start">
+                    © Copyright 2025 Mittal's Physiofit All rights reserved.
+                </p>
+                <!-- hr only visible on mobile -->
+                <hr class="d-block d-md-none text-white my-2 w-100">
+                <div class="d-flex gap-2 flex-column flex-md-row text-center text-md-end mt-2 mt-md-0">
+                    <p class="text-white mb-0">
+                        Design &amp; Development By
+                        <a href="https://www.linkedin.com/in/alok-goyal-034082127/" target="_blank"><b
+                                style="font-size: 16px;">Alok Goyal</b></a>
+                    </p>
+                    <div class="d-flex gap-2 gap-md-3 justify-content-center justify-content-md-end">
+                        <!-- WhatsApp with default message -->
+                        <a href="https://wa.me/919782218108?text=Hello%20Alok%20Goyal%2C%20I%20want%20to%20connect%20with%20you"
+                            target="_blank" class="text-white">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/alok_goyal__/" target="_blank" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/alok.goyal.92" target="_blank" class="text-white">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
