@@ -453,3 +453,33 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
+
+        #book-release {
+            background: linear-gradient(135deg, #f8f9fa 0%, #eef2f7 100%);
+        }
+
+        #book-release h2 span {
+            font-style: italic;
+        }
+
+        #book-release img {
+            transition: transform 0.3s ease;
+        }
+
+        #book-release img:hover {
+            transform: scale(1.03);
+        }
+
+
+        .modal-content {
+            background: #ffffff;
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
