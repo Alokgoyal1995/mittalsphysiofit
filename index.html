@@ -157,23 +157,23 @@
                                     </li>
                                 </ul>
                             </li>
-
-                            <!-- <li class="nav-item position-relative">
-                                <a class="nav-link" href="#workshop">
-                                    Workshops
-                                </a> -->
-                            <!-- New badge above -->
-                            <!-- <span
-                                    class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle animate-ping">
-                                    New
-                                </span> -->
-                            <!-- </li> -->
-
                             <li class="nav-item position-relative">
                                 <a class="nav-link" href="https://www.flatfeetpredictor.com/" target="_self">
                                     Flat Feet Predictor
                                 </a>
                             </li>
+                            <li class="nav-item position-relative">
+                                <a class="nav-link" href="#workshop">
+                                    Workshops
+                                </a>
+                                <!-- New badge above -->
+                                <span
+                                    class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle animate-ping">
+                                    New
+                                </span>
+                            </li>
+
+
                         </ul>
                     </div>
                 </div>
@@ -1705,7 +1705,7 @@
             </div>
         </section>
 
-        <!-- <section class="bg-light d-flex align-items-center justify-content-center py-5" id="workshop">
+        <section class="bg-light d-flex align-items-center justify-content-center py-5" id="workshop">
             <div class="container">
                 <div class="bg-white p-4 p-md-5 rounded shadow-lg w-100">
                     <div class="row g-5">
@@ -1720,7 +1720,8 @@
 
                                 <form action="https://api.web3forms.com/submit" method="POST">
                                     <input type="hidden" name="access_key" value="f66d53c0-0421-4100-ab8d-c77c25b35e02">
-
+                                    <input type="hidden" name="subject"
+                                        value="You Have a New Upcoming  WorkShop Enquiry for 20 & 21st Dec 2025">
                                     <div class="mb-3">
                                         <label class="visually-hidden" for="name">Name</label>
                                         <input class="form-control rounded" id="name" placeholder="Name" type="text"
@@ -1766,25 +1767,12 @@
 
                         </div>
                         <div class="col-md-6">
-                            <img src="./assets/image/workshop.jpg" class="w-100" />
+                            <img src="./assets/image/workshop-dec.jpg" class="w-100" />
                         </div>
                     </div>
                 </div>
-        </section>  -->
+        </section>
 
-        <!-- <section class="bg-light d-flex align-items-center justify-content-center py-5" id="workshop">
-            <div class="container">
-                <div class="bg-white p-4 p-md-5 rounded shadow-lg w-100">
-                    <div class="row g-5">
-                       
-
-                       <div></div>
-                        <div class="col">
-                            <img src="./assets/image/book.jpg" class="w-100" />
-                        </div>
-                    </div>
-                </div>
-        </section>  -->
 
 
         <!-- ===== Book Release Section ===== -->
@@ -1945,9 +1933,9 @@
                                     class="fas fa-angle-right me-2"></i>Corporate</a></li>
                         <li class="mb-2"><a class="nav-link text-decoration-none" href="#Blog"><i
                                     class="fas fa-angle-right me-2"></i>Blog</a></li>
-                        <!-- <li class="mb-2"><a class="nav-link text-decoration-none" href="#workshop"><i
+                        <li class="mb-2"><a class="nav-link text-decoration-none" href="#workshop"><i
                                     class="fas fa-angle-right me-2"></i>Upcoming Workshop</a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -2095,28 +2083,28 @@
 
 
     <!-- Book Relase -->
-   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Always show the modal when page loads
-    var bookModal = new bootstrap.Modal(document.getElementById('bookReleaseModal'));
-    bookModal.show();
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Always show the modal when page loads
+            var bookModal = new bootstrap.Modal(document.getElementById('bookReleaseModal'));
+            bookModal.show();
 
-    // Handle "Know More" button click
-    document.getElementById("knowMoreBtn").addEventListener("click", function () {
-      var modalElement = document.getElementById('bookReleaseModal');
-      var modalInstance = bootstrap.Modal.getInstance(modalElement);
-      modalInstance.hide(); // Close modal
+            // Handle "Know More" button click
+            document.getElementById("knowMoreBtn").addEventListener("click", function () {
+                var modalElement = document.getElementById('bookReleaseModal');
+                var modalInstance = bootstrap.Modal.getInstance(modalElement);
+                modalInstance.hide(); // Close modal
 
-      // Wait a bit for closing animation, then scroll
-      setTimeout(() => {
-        const bookSection = document.getElementById("book-release");
-        if (bookSection) {
-          bookSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 400);
-    });
-  });
-</script>
+                // Wait a bit for closing animation, then scroll
+                setTimeout(() => {
+                    const bookSection = document.getElementById("book-release");
+                    if (bookSection) {
+                        bookSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                }, 400);
+            });
+        });
+    </script>
 
 
 </body>
