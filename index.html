@@ -113,7 +113,6 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
 
                             <li class="nav-item">
@@ -167,11 +166,21 @@
                                     Workshops
                                 </a>
                                 <!-- New badge above -->
+                                <!-- <span
+                                    class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle animate-ping">
+                                    New
+                                </span> -->
+                            </li>
+                            <li class="nav-item position-relative">
+                                <a class="nav-link" href="#hiring" target="_self">
+                                    Hiring
+                                </a>
                                 <span
                                     class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle animate-ping">
                                     New
                                 </span>
                             </li>
+                            
 
 
                         </ul>
@@ -1705,6 +1714,74 @@
             </div>
         </section>
 
+        <section class="bg-light d-flex align-items-center justify-content-center py-5" id="hiring">
+            <div class="container">
+                <div class="bg-white p-4 p-md-5 rounded shadow-lg w-100">
+                    <div class="row g-5">
+                        <div class="col-md-6">
+                            <h1 class="display-5 fw-bold mb-4 text-danger">We are Hiring</h1>
+                            <!-- <p class="text-muted mb-4">
+                                If you have any queries or concerns, related with Hiring. Drop your details
+                                below and we'll
+                                get in touch with you.
+                            </p> -->
+                            <div class="d-flex flex-column gap-3 text-dark">
+
+                                <form action="https://api.web3forms.com/submit" method="POST">
+                                    <input type="hidden" name="access_key" value="f66d53c0-0421-4100-ab8d-c77c25b35e02">
+                                    <input type="hidden" name="subject"
+                                        value="Hiring">
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="name">Name</label>
+                                        <input class="form-control rounded" id="name" placeholder="Name" type="text"
+                                            name="name" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="phone">Phone Number</label>
+                                        <input class="form-control rounded" id="phone" placeholder="Phone Number"
+                                            name="mobile" type="tel" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="email">Email ID</label>
+                                        <input class="form-control rounded" id="email" placeholder="Email ID"
+                                            name="email" type="email" required />
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="course">Qualification</label>
+                                        <select class="form-select rounded" id="course" name="course" required>
+                                            <option value="" disabled selected>Select Course</option>
+                                            <option value="BPT">BPT</option>
+                                            <option value="MPT">MPT</option>
+                                            <option value="Under Graduate">Under Graduate</option>
+                                            <option value="Post Graduate">Post Graduate</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="message">Your Message</label>
+                                        <textarea class="form-control rounded" id="message" placeholder="Your Message"
+                                            name="message" rows="4" required></textarea>
+                                    </div>
+                                    <button class="btn btn-teal w-100 fw-bold py-2" type="submit">
+                                        SUBMIT
+                                    </button>
+                                </form>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <img src="./assets/image/hiring.jpeg" class="w-100" />
+                        </div>
+                    </div>
+                </div>
+        </section>
+
         <section class="bg-light d-flex align-items-center justify-content-center py-5" id="workshop">
             <div class="container">
                 <div class="bg-white p-4 p-md-5 rounded shadow-lg w-100">
@@ -1814,8 +1891,8 @@
                             contribution toward enhancing medical education and inspiring learners in anatomy and
                             histology.
                         </div>
-                        <a href="https://www.flipkart.com/product/p/itme?pid=9789349437531&lid=LSTBOK9789349437531U9YLEF&_refId=&_appId=WA&_refId=&_appId=CL" target="_blank"
-                            class="btn btn-success px-4">
+                        <a href="https://www.flipkart.com/product/p/itme?pid=9789349437531&lid=LSTBOK9789349437531U9YLEF&_refId=&_appId=WA&_refId=&_appId=CL"
+                            target="_blank" class="btn btn-success px-4">
                             🛒 Order Now
                         </a>
                     </div>
@@ -2047,8 +2124,8 @@
                 <div class="modal-footer justify-content-center">
                     <button type="button" id="knowMoreBtn" class="btn btn-primary px-4">Know More</button>
                     <!-- ✅ New Order Button -->
-                    <a href="https://www.flipkart.com/product/p/itme?pid=9789349437531&lid=LSTBOK9789349437531U9YLEF&_refId=&_appId=WA&_refId=&_appId=CL" target="_blank"
-                        class="btn btn-success px-4">
+                    <a href="https://www.flipkart.com/product/p/itme?pid=9789349437531&lid=LSTBOK9789349437531U9YLEF&_refId=&_appId=WA&_refId=&_appId=CL"
+                        target="_blank" class="btn btn-success px-4">
                         🛒 Order Now
                     </a>
                     <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Close</button>
