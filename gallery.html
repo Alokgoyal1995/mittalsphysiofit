@@ -215,7 +215,7 @@
                                     New
                                 </span>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -351,9 +351,9 @@
                 <div class="tab-pane fade" id="informative" role="tabpanel" aria-labelledby="informative-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <script>
-                            const informativeMedia = [34, 35, 36, 37, 38, 39];
+                            const informativeMedia = [34, 35, 36, 37, 38, 39, 44];
                             informativeMedia.forEach(i => {
-                                const ext = fileExtensions[i] || 'jpg';
+                                const ext = fileExtensions[i] || 'jpg' || 'jpeg';
                                 const isVideo = ext === 'mp4';
                                 const filePath = `assets/image/gallery/${i}.${ext}`;
                                 const thumbnailPath = isVideo ? `assets/image/gallery/${i}.jpg` : filePath;
@@ -375,7 +375,7 @@
                 <div class="tab-pane fade" id="patent" role="tabpanel" aria-labelledby="patent-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <script>
-                            const patentMedia = [40, 41, 42];
+                            const patentMedia = [40, 41, 42, 43];
                             patentMedia.forEach(i => {
                                 const ext = fileExtensions[i] || 'jpg';
                                 const isVideo = ext === 'mp4';
