@@ -483,3 +483,12 @@
         .modal-footer {
             border-top: none;
         }
+
+        .hero-section1 {
+            overflow: hidden;
+        }
+
+        .hero-section1 img {
+            width: 100%;
+            height: 100%;
+        }
